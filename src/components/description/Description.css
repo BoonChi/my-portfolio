@@ -1,0 +1,23 @@
+.card {
+    display: block;
+    width: 50%;
+    margin: auto;
+}
+
+.card-title {
+    font-size: 4vw;
+    font-weight: 200;
+    border-bottom: 1px double black;
+}
+
+.card-content {
+    font-size: 1em;
+    text-align: start;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.card-link-item {
+    margin-right: 10px;
+    text-decoration: underline;
+}
