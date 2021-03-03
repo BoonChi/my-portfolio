@@ -26,7 +26,7 @@ interface NavbarProps {
 const HeaderNavbar: React.FunctionComponent<NavbarProps> = (props) => {
     return (
         <Router>
-            <div>
+            <div className='header-navbar'>
                 <Navbar className="bg-color" color={props.color} light expand="md">
                     <div>
                         <Link to="/" className="mr-auto customized-navbar">
