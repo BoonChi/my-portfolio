@@ -5,13 +5,12 @@
 }
 
 .card-desc-title {
+    margin-top: 20px;
     font-size: 6vw;
     color: whitesmoke;
     background-color: grey;
-}
-
-.hr-style {
-    border-top: 1px solid whitesmoke;
+    box-shadow: 8px 8px black;
+    margin-bottom: 20px;
 }
 
 .card-content {
