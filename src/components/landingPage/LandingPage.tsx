@@ -1,18 +1,18 @@
 import React from 'react';
 import './LandingPage.css'
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Penguin from '../penguin/Penguin'
-import AboutMe from '../aboutMe/AboutMe';
-import Interest from '../interest/Interest';
-import Contact from '../contact/Contact';
+// import AboutMe from '../aboutMe/AboutMe';
+// import Interest from '../interest/Interest';
+// import Contact from '../contact/Contact';
 import Description from '../description/Description'
 const LandingPage: React.FunctionComponent = () => {
     return (
-        <Router>
+        // <Router>
             <div>
                 <Penguin></Penguin>
                 <Description></Description>
-                <div className="rows">
+                {/* <div className="rows">
                     <div className="row-detail">
                         <Link to="/aboutMe">About Me</Link>
                     </div>
@@ -22,14 +22,14 @@ const LandingPage: React.FunctionComponent = () => {
                     <div className="row-detail">
                         <Link to="/contact">Contact Me</Link>
                     </div>
-                </div>
-                <Switch>
+                </div> */}
+                {/* <Switch>
                     <Route path="/aboutMe"  component={AboutMe} />
                     <Route path="/interest"  component={Interest} />
                     <Route path="/contact"  component={Contact} />
-                </Switch>
+                </Switch> */}
             </div>
-        </Router>
+        // </Router>
     )
 };
 
