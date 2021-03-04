@@ -4,7 +4,8 @@
 }
 
  body {
-  background: #fd746c;  
+  /* background: #fd746c;  
   background: -webkit-linear-gradient(to right, #ff9068, #fd746c); 
-  background: linear-gradient(to right, #ff9068, #fd746c); 
+  background: linear-gradient(to right, #ff9068, #fd746c);  */
+  background: linear-gradient(90deg, #CCFFFF, #FFCCCC);
  }

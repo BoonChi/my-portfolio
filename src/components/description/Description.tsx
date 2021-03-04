@@ -4,7 +4,7 @@ const Description: React.FunctionComponent = () => {
     return (
         <div className="card-desc">
             <div className="card-desc-title">
-                <strong>REACT PHP</strong> DEVELOPER
+                <strong>REACT PHP DEVELOPER</strong>
             </div>
             {/* <hr className='hr-style'></hr> */}
             <div className="card-content">
