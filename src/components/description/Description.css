@@ -4,10 +4,14 @@
     margin: auto;
 }
 
-.card-title {
-    font-size: 4vw;
-    font-weight: 200;
-    border-bottom: 1px double black;
+.card-desc-title {
+    font-size: 6vw;
+    color: whitesmoke;
+    background-color: grey;
+}
+
+.hr-style {
+    border-top: 1px solid whitesmoke;
 }
 
 .card-content {
@@ -15,9 +19,15 @@
     text-align: start;
     margin-left: 10px;
     margin-right: 10px;
+    text-align: justify;
+}
+
+.card-content-item {
+    margin-bottom: 10px;
 }
 
 .card-link-item {
     margin-right: 10px;
     text-decoration: underline;
+    margin-bottom: 10px;
 }
