@@ -3,12 +3,13 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: grey;
+    background-color: mediumaquamarine;
     color: white;
     text-align: center;
-    height: 80px;
+    height: 30px;
+    /* display: none; */
 }
 
 .footerText {
-    margin-top: 30px;
+    margin-top: 5px;
 }

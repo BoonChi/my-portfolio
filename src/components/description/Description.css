@@ -8,17 +8,16 @@
     margin-top: 20px;
     font-size: 4vw;
     color: whitesmoke;
-    background-color: grey;
+    background-color: mediumaquamarine;
     box-shadow: 8px 8px black;
     margin-bottom: 20px;
 }
 
 .card-content {
-    font-size: 1em;
-    text-align: start;
+    font-size: 1.5em;
     margin-left: 10px;
     margin-right: 10px;
-    text-align: justify;
+    /* text-align: justify; */
 }
 
 .card-content-item {
@@ -29,4 +28,10 @@
     margin-right: 10px;
     text-decoration: underline;
     margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .card-content {
+        text-align: justify;
+    }
 }
