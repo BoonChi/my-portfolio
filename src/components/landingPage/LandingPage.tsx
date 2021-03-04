@@ -8,7 +8,7 @@ import Penguin from '../penguin/Penguin'
 import Description from '../description/Description'
 const LandingPage: React.FunctionComponent = () => {
     return (
-            <div>
+            <div className="landing-content">
                 <Penguin></Penguin>
                 <Description></Description>
             </div>
