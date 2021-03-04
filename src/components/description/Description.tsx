@@ -6,7 +6,7 @@ const Description: React.FunctionComponent = () => {
             <div className="card-desc-title">
                 <strong>REACT PHP</strong> DEVELOPER
             </div>
-            <hr className='hr-style'></hr>
+            {/* <hr className='hr-style'></hr> */}
             <div className="card-content">
                 <div className="card-content-item">Develop <strong>React</strong> APP with <strong>mongoDB</strong> and <strong>NodeJS</strong></div>
                 <div className="card-content-item">Develop <strong>PHP SLIM</strong> framework APP with <strong>jQuery</strong> and <strong>MySql</strong></div>
