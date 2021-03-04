@@ -19,6 +19,10 @@
     justify-content: space-between;
 }
 
+.landing-content {
+    margin-top: 10%;
+}
+
 @media only screen and (min-height: 680px) {
     .rows {
         display: flex;
