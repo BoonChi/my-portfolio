@@ -1,0 +1,41 @@
+.hobby {
+    font-size: 4vw;
+background-color: rgb(214, 231, 141);
+    box-shadow: 5px 3px black;
+    width: 60%;
+    color: black;
+    text-shadow: 1px 1px white;
+    font-weight: 900;
+    margin:auto;  
+    margin-bottom: 5%; 
+    border-radius: 10%;
+}
+
+.hobby-desc{
+    margin-top: 10px;
+    font-family: 'Lato', sans-serif;
+    font-size: 2vw;
+}
+
+.fa-youtube {
+    color: red;
+}
+
+iframe {
+    width: 300px;
+    height: 200px;
+    margin-top: 5%;
+}
+
+@media only screen and (min-width: 700px) {
+    iframe {
+        width: 80%;
+        height: 400px;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    iframe {
+        width: 50%;
+    }
+}

@@ -1,10 +1,11 @@
 import React from 'react';
-import BrandImage from '../../assets/graphics/brand.jpeg'
-
+import './Interest.css'
+import Moon from '../moon/Moon'
+import Video from '../video/Video';
 const Interest: React.FunctionComponent = () => {
     return (
-        <div>
-            <img src={BrandImage} alt=""/>
+        <div className='interest-page'>
+            <Video></Video>
         </div>
     )
 
