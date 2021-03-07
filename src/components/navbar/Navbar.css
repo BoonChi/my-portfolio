@@ -1,10 +1,13 @@
 .bg-color {
-    background-color: mediumaquamarine;
+    background-color: rgb(214, 231, 141);
 }
 
 .brandName {
-    color: whitesmoke;
+    color: black;
     font-size: 2vw;
+    font-weight:bolder;
+    text-transform: uppercase; 
+    text-shadow: 1px 1px whitesmoke;
 }
 
 .icon-color {
