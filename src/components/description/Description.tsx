@@ -1,11 +1,13 @@
 import React from 'react';
 import './Description.css'
+import Penguin from '../penguin/Penguin'
 const Description: React.FunctionComponent = () => {
     return (
-        <div className="card-desc">
+        <div>
             <div className="card-desc-title">
-                <strong>REACT PHP DEVELOPER</strong>
+                <strong>REACT DEVELOPER</strong>
             </div>
+            <Penguin></Penguin>
             {/* <hr className='hr-style'></hr> */}
             <div className="card-content">
                 <div className="card-content-item">Develop <strong>React</strong> APP with <strong>mongoDB</strong> and <strong>NodeJS</strong></div>
