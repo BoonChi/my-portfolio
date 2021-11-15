@@ -3,7 +3,7 @@ import CustomButton from "../../components/common/CustomButton";
 import Description from "../../components/common/Description";
 import Title from "../../components/common/Title";
 import styles from "../../styles/Pomodoro.module.scss";
-const index = () => {
+const Pomodoro = () => {
   const initialValue = 0;
   const initialCondition = false;
   const [count, setCount] = useState(initialValue);
@@ -48,4 +48,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Pomodoro;
