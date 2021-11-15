@@ -1,0 +1,15 @@
+.container {
+  text-align: center;
+}
+
+$color-primary: #4caf50;
+
+.count {
+  color: $color-primary;
+  font-size: 50px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}

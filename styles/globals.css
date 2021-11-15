@@ -2,6 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
+  background-color: whitesmoke;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -13,4 +14,15 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+button {
+  background-color: #4caf50; /* Green */
+  /* border: none; */
+  border-color: grey;
+  border-radius: 20%;
+  margin: 10px;
+  color: white;
+  padding: 15px 32px;
+  font-size: 25px;
 }
