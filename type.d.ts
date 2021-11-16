@@ -25,3 +25,4 @@ type ISideBar = {
   id: number
   name: string
 }
+declare module '*.mp3';
