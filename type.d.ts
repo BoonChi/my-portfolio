@@ -8,6 +8,16 @@ type ArticleState = {
   articles: IArticle[]
 }
 
+type CounterState = {
+  value: number
+}
+
+type TodoState = {
+  id: string,
+  desc: string,
+  completed: boolean
+}
+
 type ArticleAction = {
   type: string
   article: IArticle

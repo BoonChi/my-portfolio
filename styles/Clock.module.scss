@@ -1,0 +1,11 @@
+@import "mixins";
+$margin-top: 20%;
+
+.container {
+  text-align: center;
+  margin-top: $margin-top;
+  @include list() {
+    width: 50%;
+    flex-direction: column;
+  }
+}

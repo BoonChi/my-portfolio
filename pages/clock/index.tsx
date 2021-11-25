@@ -4,6 +4,7 @@ import Countdown from "../../components/clock/countdown";
 import CustomButton from "../../components/common/CustomButton";
 import Title from "../../components/common/Title";
 import PlayAudio from "../../components/common/PlayAudio";
+import styles from "../../styles/Clock.module.scss";
 
 type timerStates = {
   session: string;
@@ -112,9 +113,8 @@ const Clock = () => {
     };
   }, [started, second, timerLoop]);
   return (
-    <div>
-      <Title title={"25 + 5 Clock"} />
-      <p>timeLoop:{timerLoop}</p>
+    <div className={styles.container}>
+      <Title title={"Pomodoro App"} />
       <ClockController
         count={cycle}
         title={"Cycle Length"}
