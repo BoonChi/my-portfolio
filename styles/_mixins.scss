@@ -3,3 +3,46 @@
     @content;
   }
 }
+
+@mixin boxShadow($x, $y, $blur, $c) {
+  -webkit-box-shadow: $x $y $blur $c;
+  -moz-box-shadow: $x $y $blur $c;
+  -ms-box-shadow: $x $y $blur $c;
+  box-shadow: $x $y $blur $c;
+}
+
+@mixin make-bold($bool) {
+  @if $bool == true {
+    font-weight: bold;
+  }
+}
+
+@mixin decorate-item-list($bool) {
+  @if $bool == true {
+    text-decoration: line-through;
+  }
+}
+
+@mixin text-effect($val) {
+  @if $val == danger {
+    color: red;
+  } @else if $val == alert {
+    color: yellow;
+  } @else if $val == success {
+    color: green;
+  } @else {
+    color: black;
+  }
+}
+
+@mixin button-color($val) {
+  @if $val == danger {
+    background-color: red;
+  } @else if $val == alert {
+    background-color: yellow;
+  } @else if $val == success {
+    background-color: green;
+  } @else {
+    background-color: black;
+  }
+}

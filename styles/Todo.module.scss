@@ -1,0 +1,22 @@
+@import "mixins";
+
+.container {
+  text-align: center;
+
+  ul {
+    margin-top: 50px;
+    list-style-type: none;
+  }
+}
+
+.completedTodo {
+  @include decorate-item-list(true);
+}
+
+.redButton {
+  @include button-color(danger);
+}
+
+.greenButton {
+  @include button-color(success);
+}
