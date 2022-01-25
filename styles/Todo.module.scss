@@ -1,7 +1,9 @@
-@import "mixins";
+@import 'mixins';
 
 .container {
   text-align: center;
+  margin: 20% auto;
+  width: auto;
 
   ul {
     margin-top: 50px;

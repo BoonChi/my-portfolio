@@ -1,17 +1,36 @@
-import Link from "next/link";
-import React from "react";
+import React, { useState } from 'react'
+import { NextPage } from 'next'
+import { Container } from 'react-bootstrap'
+import PersonalProjects from 'components/personal-projects/PersonalProjects'
+import LandingPage from 'components/landing-page/LandingPage'
 
-const App: React.FC = () => {
+const projectsArray = [
+  {
+    url: '/todo',
+    title: 'Todo App',
+    description: 'Make your todo lists now ✔️',
+    buttonColor: 'info',
+  },
+  {
+    url: '/pomodoro',
+    title: 'Pomodoro App',
+    description: 'Why not use our Pomodoro tracker ⏰',
+    buttonColor: 'danger',
+  },
+]
+
+const App: NextPage = () => {
+  const [showProject, setShowProject] = useState(false)
+  const handleShowProject = () => setShowProject(true)
   return (
-    <main className="container">
-      <div>
-        <Link href={"/clock"}>Pomodoro clock with break and session</Link>
-      </div>
-      <div>
-        <Link href={"/todo"}>Todo App</Link>
-      </div>
-    </main>
-  );
-};
+    <Container fluid='sm' className='main-container'>
+      {showProject ? (
+        <PersonalProjects projects={projectsArray} />
+      ) : (
+        <LandingPage handleShowProject={handleShowProject} />
+      )}
+    </Container>
+  )
+}
 
-export default App;
+export default App

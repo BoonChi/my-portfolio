@@ -1,12 +1,12 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useState } from 'react'
 
 type Props = {
-  todoAppTitle: string;
-  handleAdd: (text: string) => void;
-  addButtonName: string;
-  userInput: string;
-  handleChange: (event: FormEvent<HTMLInputElement>) => void;
-};
+  todoAppTitle: string
+  handleAdd: (text: string) => void
+  addButtonName: string
+  userInput: string
+  handleChange: (event: FormEvent<HTMLInputElement>) => void
+}
 const TodoHeader: React.FC<Props> = ({
   todoAppTitle,
   handleAdd,
@@ -18,14 +18,14 @@ const TodoHeader: React.FC<Props> = ({
     <div>
       <h1>{todoAppTitle}</h1>
       <input
-        type="text"
+        type='text'
         value={userInput}
         onChange={(event) => handleChange(event)}
-        placeholder="Enter todo"
+        placeholder='Enter todo'
       />
       <button onClick={() => handleAdd(userInput)}>{addButtonName}</button>
     </div>
-  );
-};
+  )
+}
 
-export default TodoHeader;
+export default TodoHeader

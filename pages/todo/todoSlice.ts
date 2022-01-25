@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction, nanoid, Dispatch } from "@reduxjs/toolkit";
-import { todoItemAction } from "../../constant/variable";
+import { todoItemAction } from "@constant/index";
 import { RootState } from "../../pages/store";
 
 export const todoSlice = createSlice({

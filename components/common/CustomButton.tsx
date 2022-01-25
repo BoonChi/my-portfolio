@@ -1,15 +1,24 @@
-import React from 'react'
-
+import { Button, Container } from 'react-bootstrap'
 type Props = {
   buttonName: string
-  buttonHandler: () => void
+  buttonHandler?: () => void
+  buttonVariant?: string
 }
-const CustomButton: React.FC<Props> = ({ buttonName, buttonHandler }) => {
+const CustomButton: React.FC<Props> = ({
+  buttonName,
+  buttonHandler,
+  buttonVariant,
+}) => {
   return (
     <div>
-      <button type='submit' onClick={buttonHandler}>
+      <Button
+        variant={buttonVariant}
+        onClick={buttonHandler}
+        size='lg'
+        style={{ margin: '10px' }}
+      >
         {buttonName}
-      </button>
+      </Button>
     </div>
   )
 }

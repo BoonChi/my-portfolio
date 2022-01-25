@@ -1,18 +1,18 @@
-import React, { FormEvent } from "react";
-import TodoModal from "./todoModal";
+import React, { FormEvent } from 'react'
+import TodoModal from './todoModal'
 
 interface Props<T> {
-  renderItem: (item: T) => string;
-  keyExtractor: (item: T) => string;
-  data: T[];
-  buttonGroup: string[];
-  handleActions: (buttonName: string, todoItemId: TodoState["id"]) => void;
-  modalPop: boolean;
-  handleModal: () => void;
-  selectedTodo: TodoState;
-  handleNewTodoChange: (event: FormEvent<HTMLInputElement>) => void;
-  updateNewTodo: (text: TodoState["desc"]) => void;
-  editedTodo: TodoState["desc"];
+  renderItem: (item: T) => string
+  keyExtractor: (item: T) => string
+  data: T[]
+  buttonGroup: string[]
+  handleActions: (buttonName: string, todoItemId: TodoState['id']) => void
+  modalPop: boolean
+  handleModal: () => void
+  selectedTodo: TodoState
+  handleNewTodoChange: (event: FormEvent<HTMLInputElement>) => void
+  updateNewTodo: (text: TodoState['desc']) => void
+  editedTodo: TodoState['desc']
 }
 
 const todoListItem: React.FC<Props<{ [key: string]: any }>> = ({
@@ -28,7 +28,6 @@ const todoListItem: React.FC<Props<{ [key: string]: any }>> = ({
   updateNewTodo,
   editedTodo,
 }) => {
-  // local state
   return (
     <div>
       <ul>
@@ -49,14 +48,14 @@ const todoListItem: React.FC<Props<{ [key: string]: any }>> = ({
       <TodoModal
         show={modalPop}
         handleClose={handleModal}
-        title={"Edit"}
+        title={'Edit'}
         oldTodo={selectedTodo}
         handleNewTodoChange={(event) => handleNewTodoChange(event)}
         updateNewTodo={(text) => updateNewTodo(text)}
         editedTodo={editedTodo}
       />
     </div>
-  );
-};
+  )
+}
 
-export default todoListItem;
+export default todoListItem

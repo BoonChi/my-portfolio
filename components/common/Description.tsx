@@ -7,7 +7,7 @@ type Props = {
 const Description: React.FC<Props> = ({ description }) => {
   return (
     <div>
-      <p>Description: {description}</p>
+      <h4 className='normal-font-weight'>{description}</h4>
     </div>
   )
 }

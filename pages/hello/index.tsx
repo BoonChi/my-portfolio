@@ -1,5 +1,6 @@
+import React from "react";
 interface IProps {
-  name?: string
+  name?: string;
 }
 const Hello: React.FunctionComponent<IProps> = ({ name }) => {
   return (
@@ -11,7 +12,7 @@ const Hello: React.FunctionComponent<IProps> = ({ name }) => {
         </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hello
+export default Hello;
