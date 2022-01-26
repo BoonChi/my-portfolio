@@ -1,5 +1,5 @@
 module.exports = {
-  basePath: process.env.NODE_ENV_PROD ? '' : '/my-portfolio',
+  basePath: process.env.NODE_ENV_PROD === 'true' ? '' : '/my-portfolio',
   assetPrefix: process.env.NODE_ENV_PROD ? '' : '/my-portfolio/', // assetPrefix requires the trailing slash
   webpack(config, options) {
     const { isServer, webpack } = options
