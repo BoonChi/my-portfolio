@@ -1,4 +1,6 @@
 module.exports = {
+  basePath: '/my-portfolio',
+  assetPrefix: '/my-portfolio/', // assetPrefix requires the trailing slash
   webpack(config, options) {
     const { isServer, webpack } = options
     config.plugins.push(
