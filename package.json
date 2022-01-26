@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "rootDir": ".",
-  "homepage": "https://boonchi-portfolio.github.io",
+  "homepage": "http://BoonChi.github.io/my-portfolio",
   "scripts": {
     "predev": "tsc",
     "dev": "next dev",
