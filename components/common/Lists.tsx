@@ -1,12 +1,8 @@
-import { Dispatch } from "@reduxjs/toolkit";
-import React from "react";
-import { useAppDispatch } from "../../pages/hooks";
-import { removeTodo } from "../../pages/todo/todoSlice";
-
+import React from 'react'
 interface Props<T> {
-  renderItem: (item: T) => string;
-  keyExtractor: (item: T) => string;
-  data: T[];
+  renderItem: (item: T) => string
+  keyExtractor: (item: T) => string
+  data: T[]
 }
 
 const Lists: React.FC<Props<{ [key: string]: any }>> = ({
@@ -22,7 +18,7 @@ const Lists: React.FC<Props<{ [key: string]: any }>> = ({
         ))}
       </ul>
     </div>
-  );
-};
+  )
+}
 
-export default Lists;
+export default Lists

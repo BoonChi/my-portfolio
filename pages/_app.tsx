@@ -3,17 +3,17 @@ import '@styles/globals.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { Provider } from 'react-redux'
-import store from './store'
+import store from '../components/store'
 import CustomNavbar from 'components/common/CustomNavbar'
 
 const navItemArray = [
   {
     link: '/todo',
-    name: 'Todo App',
+    name: 'Todo',
   },
   {
     link: '/pomodoro',
-    name: 'Pomodoro App',
+    name: 'Pomodoro',
   },
 ]
 

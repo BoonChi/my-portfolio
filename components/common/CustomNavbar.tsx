@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { Container, Nav, Navbar } from 'react-bootstrap'
-import styled from 'styled-components'
 
 interface INavbarLink {
   name: string
@@ -21,11 +20,9 @@ const CustomNavbar: React.FC<Props> = ({ navItems }) => {
           </Navbar.Brand>
           <Nav className='me-auto'>
             {navItems.map((item, index) => (
-              <Nav.Link key={index}>
-                <Link key={index} href={item.link} passHref>
-                  {item.name}
-                </Link>
-              </Nav.Link>
+              <Link key={index} href={item.link} passHref>
+                {item.name}
+              </Link>
             ))}
           </Nav>
         </Container>

@@ -1,11 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from '../feature/counter/counterSlice'
-import todoReducer from '../pages/todo/todoSlice'
+import todoReducer from 'components/todo/todoSlice'
 
 const store = configureStore({
   reducer: {
     // Define a top-level state field named `todos`, handled by `todosReducer`
-    counter: counterReducer,
     todo: todoReducer
   },
 })

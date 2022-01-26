@@ -1,16 +1,16 @@
 import { Dispatch } from '@reduxjs/toolkit'
 import React, { FormEvent, useState } from 'react'
-import { useAppDispatch, useAppSelector } from '../hooks'
+import { useAppDispatch, useAppSelector } from '../../components/hooks'
 import {
   addTodo,
   selectActionReducer,
   selectTodoList,
   updateTodo,
-} from './todoSlice'
+} from 'components/todo/todoSlice'
 import styles from '@styles/Todo.module.scss'
-import TodoListItem from './todoListItem'
+import TodoListItem from 'components/todo/todoListItem'
 import { todoItemAction, todoItemActionArray } from '@constant/index'
-import TodoHeader from './todoHeader'
+import TodoHeader from '../../components/todo/todoHeader'
 
 const Todo = () => {
   // from redux store
