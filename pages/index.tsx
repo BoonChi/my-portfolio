@@ -7,14 +7,14 @@ import LandingPage from 'components/landing-page/LandingPage'
 const projectsArray = [
   {
     url: '/todo',
-    title: 'Todo App',
-    description: 'Make your todo lists now ✔️',
+    title: 'Todo',
+    description: 'Make your todo lists now 📝',
     buttonColor: 'info',
   },
   {
     url: '/pomodoro',
-    title: 'Pomodoro App',
-    description: 'Why not use our Pomodoro tracker ⏰',
+    title: 'Pomodoro',
+    description: 'Lets use our Pomodoro tracker ⏰',
     buttonColor: 'danger',
   },
 ]

@@ -1,0 +1,14 @@
+$larger-line-height: 30px;
+
+@keyframes enlarge {
+  from {
+    line-height: $larger-line-height;
+  }
+  to {
+    line-height: initial;
+  }
+}
+
+.custom-button-animation {
+  animation: enlarge 0.5s infinite;
+}

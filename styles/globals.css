@@ -2,8 +2,6 @@ html,
 body {
   padding: 0;
   background-color: #dddddd;
-  font-family: 'avenir, roboto, noto, ubuntu, ' helvetica neue
-    ', helvetica, arial, sans-serif';
   line-height: 1.5;
   color: black;
   text-align: center;
@@ -25,10 +23,17 @@ h1 {
 
 a {
   text-decoration: none;
-  color: whitesmoke;
+  color: black;
   padding-left: 10px;
 }
 
 a:hover {
   color: coral;
+}
+
+.inline-control-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  max-height: 50px;
 }

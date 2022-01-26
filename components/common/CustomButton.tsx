@@ -1,13 +1,16 @@
-import { Button, Container } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
+import CustomButtonStyle from '@styles/CustomButton.module.scss'
 type Props = {
   buttonName: string
   buttonHandler?: () => void
   buttonVariant?: string
+  buttonAnimation?: boolean
 }
 const CustomButton: React.FC<Props> = ({
   buttonName,
   buttonHandler,
   buttonVariant,
+  buttonAnimation,
 }) => {
   return (
     <div>
@@ -15,7 +18,9 @@ const CustomButton: React.FC<Props> = ({
         variant={buttonVariant}
         onClick={buttonHandler}
         size='lg'
-        style={{ margin: '10px' }}
+        className={`${CustomButtonStyle['custom-button']} ${
+          buttonAnimation ? CustomButtonStyle['custom-button-animation'] : null
+        }`}
       >
         {buttonName}
       </Button>

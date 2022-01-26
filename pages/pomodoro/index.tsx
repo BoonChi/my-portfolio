@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import ClockController from '../../components/clock/clockController'
-import Countdown from '../../components/clock/countdown'
-import CustomButton from '../../components/common/CustomButton'
-import Title from '../../components/common/Title'
-import PlayAudio from '../../components/common/PlayAudio'
+import { Button } from 'react-bootstrap'
+import Link from 'next/link'
+import ClockController from 'components/clock/clockController'
+import Countdown from 'components/clock/countdown'
+import CustomButton from 'components/common/CustomButton'
+import Title from 'components/common/Title'
+import PlayAudio from 'components/common/PlayAudio'
 import pomodoroStyle from '@styles/Pomodoro.module.scss'
 
 type timerStates = {
@@ -114,7 +116,7 @@ const Clock = () => {
   }, [started, second, timerLoop])
   return (
     <div className='main-container'>
-      <Title title={'Pomodoro App'} />
+      <Title title={'Pomodoro'} />
       <ClockController
         count={cycle}
         title={'Cycle Length'}
@@ -134,9 +136,26 @@ const Clock = () => {
         handleDecrease={handleDecreaseSession}
       />
       <Countdown title={timerState} minute={minute} second={second} />
-      <div className={pomodoroStyle.pomodoroControlButton}>
-        <CustomButton buttonName='Start' buttonHandler={handleStart} />
-        <CustomButton buttonName='Reset' buttonHandler={handleReset} />
+      <div className={'inline-control-button'}>
+        <a>
+          <CustomButton
+            buttonVariant='success'
+            buttonName='Start'
+            buttonHandler={handleStart}
+          />
+        </a>
+        <a>
+          <CustomButton
+            buttonVariant='danger'
+            buttonName='Reset'
+            buttonHandler={handleReset}
+          />
+        </a>
+        <Link href={'/'} passHref={true}>
+          <a>
+            <CustomButton buttonName={'Back'}></CustomButton>
+          </a>
+        </Link>
       </div>
       {timerState === timerStateTypes.break ? <PlayAudio /> : null}
     </div>

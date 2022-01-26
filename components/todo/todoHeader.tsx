@@ -1,4 +1,7 @@
-import React, { FormEvent, useState } from 'react'
+import CustomButton from 'components/common/CustomButton'
+import Link from 'next/link'
+import React, { FormEvent } from 'react'
+import { Button } from 'react-bootstrap'
 
 type Props = {
   todoAppTitle: string
@@ -17,13 +20,23 @@ const TodoHeader: React.FC<Props> = ({
   return (
     <div>
       <h1>{todoAppTitle}</h1>
-      <input
-        type='text'
-        value={userInput}
-        onChange={(event) => handleChange(event)}
-        placeholder='Enter todo'
-      />
-      <button onClick={() => handleAdd(userInput)}>{addButtonName}</button>
+      <div className={'inline-control-button'}>
+        <input
+          type='text'
+          value={userInput}
+          onChange={(event) => handleChange(event)}
+          placeholder='Enter todo'
+          style={{ marginRight: '20px', borderRadius: '4px' }}
+        />
+        <Button variant={'success'} onClick={() => handleAdd(userInput)}>
+          {addButtonName}
+        </Button>
+        <Link href={'/'} passHref={true}>
+          <a>
+            <CustomButton buttonName={'Back'}></CustomButton>
+          </a>
+        </Link>{' '}
+      </div>
     </div>
   )
 }

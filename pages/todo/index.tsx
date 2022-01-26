@@ -11,6 +11,8 @@ import styles from '@styles/Todo.module.scss'
 import TodoListItem from 'components/todo/todoListItem'
 import { todoItemAction, todoItemActionArray } from '@constant/index'
 import TodoHeader from '../../components/todo/todoHeader'
+import Link from 'next/link'
+import { Button } from 'react-bootstrap'
 
 const Todo = () => {
   // from redux store

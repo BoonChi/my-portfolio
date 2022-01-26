@@ -22,3 +22,7 @@
 .greenButton {
   @include button-color(success);
 }
+
+.todo-input {
+  padding: 10px;
+}

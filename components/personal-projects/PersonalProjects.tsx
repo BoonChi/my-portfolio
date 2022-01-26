@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Card, Row, Col, Button } from 'react-bootstrap'
+import personalProjectsStyle from '@styles/PersonalProjects.module.scss'
 
 interface IPersonalProjectsProps {
   url: string
@@ -21,7 +22,9 @@ const PersonalProjects: React.FC<Props> = ({ projects }) => {
             <Card bg='light' border='dark'>
               <Card.Header>Featured {index + 1}</Card.Header>
               <Card.Body>
-                <Card.Title>{project.title}</Card.Title>
+                <Card.Title className={personalProjectsStyle.shaking}>
+                  {project.title}
+                </Card.Title>
                 <Card.Text>{project.description}</Card.Text>
                 <Link href={project.url} passHref>
                   <Button variant={project.buttonColor}>Lets try</Button>

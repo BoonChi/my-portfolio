@@ -13,18 +13,21 @@ type Props = {
 const CustomNavbar: React.FC<Props> = ({ navItems }) => {
   return (
     <div>
-      <Navbar bg='dark' variant='dark' sticky='top'>
+      <Navbar bg='warning' sticky='top' expand={'lg'}>
         <Container>
           <Navbar.Brand>
             <Link href={'/'}>Home</Link>
           </Navbar.Brand>
-          <Nav className='me-auto'>
-            {navItems.map((item, index) => (
-              <Link key={index} href={item.link} passHref>
-                {item.name}
-              </Link>
-            ))}
-          </Nav>
+          <Navbar.Toggle aria-controls='basic-navbar-nav' />
+          <Navbar.Collapse id='basic-navbar-nav'>
+            <Nav className='me-auto'>
+              {navItems.map((item, index) => (
+                <Link key={index} href={item.link} passHref>
+                  {item.name}
+                </Link>
+              ))}
+            </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
     </div>

@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           content='width=device-width, initial-scale=1, maximum-scale=5.0, minimum-scale=0.86'
         />
       </Head>
-      <CustomNavbar navItems={navItemArray} />
+      {/* <CustomNavbar navItems={navItemArray} /> */}
       <Component {...pageProps} />
     </Provider>
   )
