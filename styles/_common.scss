@@ -1,0 +1,39 @@
+@import "styles/mixins";
+$font-size: font-size;
+$margin-size: margin;
+$width-size: width;
+
+.main {
+  background-color: whitesmoke;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inline-control-button {
+  display: flex;
+  a {
+    margin: 0% 2%;
+  }
+}
+
+$base-color: grey;
+
+$h1-font-sizes: (300px 28px, 480px 30px, 640px 33px, 700px 38px, 1024px 42px);
+
+$margin-sizes: (100px 2%, 480px 4%, 640px 6%, 700px 8%, 1024px 10%);
+
+$max-div: 10;
+
+@for $i from 1 through $max-div {
+  .text-decorated-#{$i} {
+    color: lighten($base-color, $i * 5%);
+    @include adjustment($font-size, $h1-font-sizes);
+    text-transform: uppercase;
+    word-spacing: $i * 1rem;
+    opacity: $i * 40%;
+    font-weight: $i * 500;
+  }
+}

@@ -1,0 +1,24 @@
+@import "styles/common";
+
+$margin-li-sizes: (
+  100px 1% 0%,
+  480px 2% 0%,
+  640px 3% 0%,
+  700px 4% 0%,
+  1024px 5% 0%
+);
+
+.container {
+  @extend .main;
+  ul {
+    margin-top: 30px;
+    list-style-type: none;
+  }
+  li {
+    @include adjustment($margin-size, $margin-li-sizes);
+  }
+}
+
+.todo-input {
+  padding: 10px;
+}

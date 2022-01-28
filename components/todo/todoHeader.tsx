@@ -1,15 +1,16 @@
-import CustomButton from 'components/common/CustomButton'
-import Link from 'next/link'
-import React, { FormEvent } from 'react'
-import { Button } from 'react-bootstrap'
+import Link from "next/link";
+import React, { FormEvent } from "react";
+import CustomButton from "components/common/button/CustomButton";
+import Title from "components/common/title/CustomTitle";
+import TodoHeaderStyle from "./TodoHeader.module.scss";
 
 type Props = {
-  todoAppTitle: string
-  handleAdd: (text: string) => void
-  addButtonName: string
-  userInput: string
-  handleChange: (event: FormEvent<HTMLInputElement>) => void
-}
+  todoAppTitle: string;
+  handleAdd: (text: string) => void;
+  addButtonName: string;
+  userInput: string;
+  handleChange: (event: FormEvent<HTMLInputElement>) => void;
+};
 const TodoHeader: React.FC<Props> = ({
   todoAppTitle,
   handleAdd,
@@ -19,26 +20,30 @@ const TodoHeader: React.FC<Props> = ({
 }) => {
   return (
     <div>
-      <h1>{todoAppTitle}</h1>
-      <div className={'inline-control-button'}>
+      <Title title={todoAppTitle}></Title>
+      <div className={TodoHeaderStyle["inline-control-button"]}>
         <input
-          type='text'
+          type="text"
           value={userInput}
           onChange={(event) => handleChange(event)}
-          placeholder='Enter todo'
-          style={{ marginRight: '20px', borderRadius: '4px' }}
+          placeholder="Enter todo"
+          style={{ marginRight: "20px", borderRadius: "4px" }}
         />
-        <Button variant={'success'} onClick={() => handleAdd(userInput)}>
-          {addButtonName}
-        </Button>
-        <Link href={'/'} passHref={true}>
+        <a>
+          <CustomButton
+            buttonVariant="success"
+            buttonName={addButtonName}
+            buttonHandler={() => handleAdd(userInput)}
+          />
+        </a>
+        <Link href={"/"} passHref>
           <a>
-            <CustomButton buttonName={'Back'}></CustomButton>
+            <CustomButton buttonName={"Back"}></CustomButton>
           </a>
-        </Link>{' '}
+        </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TodoHeader
+export default TodoHeader;

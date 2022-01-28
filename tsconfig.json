@@ -14,12 +14,7 @@
     "incremental": true,
     "jsx": "preserve",
     "allowJs": true,
-    "baseUrl": ".",
-    "paths": {
-      "@styles/*": ["styles/*"],
-      "@constant/*": ["constant/*"],
-      "@pages/*": ["pages/*"]
-    }
+    "baseUrl": "."
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

@@ -1,0 +1,15 @@
+@import "styles/common";
+
+$img-sizes: (
+  100px: 40%,
+  480px: 20%,
+  640px: 16%,
+  700px: 13%,
+  1024px: 10%,
+);
+
+.my-photo {
+  border-radius: 50%;
+  @include boxShadow(3px, 2px, 2px, grey);
+  @include adjustment(width, $img-sizes);
+}

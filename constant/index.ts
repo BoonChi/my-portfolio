@@ -12,5 +12,18 @@ export enum todoItemAction {
   completed = 'Completed'
 }
 
-export const todoItemActionArray = Object.values(todoItemAction)
+export const todoItemActionArray = [
+  // {
+  //   name: todoItemAction.edit,
+  //   color: "info"
+  // },
+  {
+    name: todoItemAction.delete,
+    color: "danger"
+  },
+  {
+    name: todoItemAction.completed,
+    color: "secondary"
+  }
+]
 

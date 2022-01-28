@@ -1,32 +1,43 @@
-import CustomButton from 'components/common/CustomButton'
-import Description from 'components/common/Description'
-import Title from 'components/common/Title'
-import LandingPageStyle from '@styles/LandingPage.module.scss'
+import CustomButton from "components/common/button/CustomButton";
+import Description from "components/common/Description";
+import LandingPageStyle from "./LandingPage.module.scss";
+import { descriptionArray, textArray } from "./variable";
 
 type Props = {
-  handleShowProject: () => void
-}
+  handleShowProject: () => void;
+};
 
 const LandingPage: React.FC<Props> = ({ handleShowProject }) => {
   return (
-    <div>
-      <div className={LandingPageStyle['text-hidden-1']}>The Coder</div>
-      <div className={LandingPageStyle['text-hidden-2']}>Boon Chi</div>
+    <div className={LandingPageStyle["main"]}>
+      <img
+        src={"/my-photo.png"}
+        className={LandingPageStyle["my-photo"]}
+        alt="my photo"
+      ></img>
+      {textArray.map((text, index) => (
+        <div
+          className={LandingPageStyle[`text-decorated-${index + 1}`]}
+          key={index}
+        >
+          {text}
+        </div>
+      ))}
       <br />
-      <Description description={'Hi people 👋'} />
-      <Description description={'Welcome to my little space'} />
-      <Description description={'🐛🎨🎉📝'} />
+      {descriptionArray.map((desc, index) => (
+        <Description description={desc} key={index} />
+      ))}
       <br />
       <CustomButton
-        buttonVariant='warning'
+        buttonVariant="warning"
         buttonHandler={() => handleShowProject()}
-        buttonName='Click here'
+        buttonName="Click here"
         buttonAnimation={true}
       >
-        <span className={LandingPageStyle['home-button']}></span>
+        <span className={LandingPageStyle["home-button"]}></span>
       </CustomButton>
     </div>
-  )
-}
+  );
+};
 
-export default LandingPage
+export default LandingPage;

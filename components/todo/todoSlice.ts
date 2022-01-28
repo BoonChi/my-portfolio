@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction, nanoid, Dispatch } from "@reduxjs/toolkit";
-import { todoItemAction } from "@constant/index";
-import { RootState } from "../../components/store";
+import { todoItemAction } from "constant/index";
+import { RootState } from "components/store";
 
 export const todoSlice = createSlice({
   name: 'todo',

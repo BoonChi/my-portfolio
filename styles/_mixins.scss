@@ -47,14 +47,10 @@
   }
 }
 
-@mixin font-size($fs-map) {
-  @each $fs-breakpoint, $fs-font-size in $fs-map {
-    @if $fs-breakpoint == null {
-      font-size: $fs-font-size;
-    } @else {
-      @media screen and (min-width: $fs-breakpoint) {
-        font-size: $fs-font-size;
-      }
+@mixin adjustment($style, $fs-map) {
+  @each $fs-breakpoint, $fs-size, $fs-size-second in $fs-map {
+    @media screen and (min-width: $fs-breakpoint) {
+      #{$style}: $fs-size $fs-size-second;
     }
   }
 }

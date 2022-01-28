@@ -1,41 +1,47 @@
-import Link from 'next/link'
-import { Card, Row, Col, Button } from 'react-bootstrap'
-import personalProjectsStyle from '@styles/PersonalProjects.module.scss'
+import Link from "next/link";
+import { Card } from "react-bootstrap";
+import CustomButton from "components/common/button/CustomButton";
+import personalProjectsStyle from "./PersonalProjects.module.scss";
 
 interface IPersonalProjectsProps {
-  url: string
-  title: string
-  description: string
-  buttonColor: string
+  url: string;
+  title: string;
+  description: string;
+  buttonColor: string;
 }
 
 type Props = {
-  projects: Array<IPersonalProjectsProps>
-}
+  projects: Array<IPersonalProjectsProps>;
+};
 
 const PersonalProjects: React.FC<Props> = ({ projects }) => {
   return (
     <div>
-      <Row xs={1} md={projects.length} className='g-4'>
-        {projects.map((project, index) => (
-          <Col key={index}>
-            <Card bg='light' border='dark'>
-              <Card.Header>Featured {index + 1}</Card.Header>
-              <Card.Body>
-                <Card.Title className={personalProjectsStyle.shaking}>
-                  {project.title}
-                </Card.Title>
-                <Card.Text>{project.description}</Card.Text>
-                <Link href={project.url} passHref>
-                  <Button variant={project.buttonColor}>Lets try</Button>
-                </Link>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-      </Row>
+      {projects.map((project, index) => (
+        <Card
+          bg="light"
+          key={index}
+          className={personalProjectsStyle["card-body"]}
+        >
+          <Card.Header>Featured {index + 1}</Card.Header>
+          <Card.Body>
+            <Card.Title className={personalProjectsStyle.shaking}>
+              {project.title}
+            </Card.Title>
+            <Card.Text>{project.description}</Card.Text>
+            <Link href={project.url} passHref>
+              <a>
+                <CustomButton
+                  buttonVariant={project.buttonColor}
+                  buttonName="Lets try"
+                ></CustomButton>
+              </a>
+            </Link>
+          </Card.Body>
+        </Card>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default PersonalProjects
+export default PersonalProjects;
