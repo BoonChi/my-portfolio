@@ -11,7 +11,7 @@ const LandingPage: React.FC<Props> = ({ handleShowProject }) => {
   return (
     <div className={LandingPageStyle["main"]}>
       <img
-        src={"/my-photo.png"}
+        src={"my-photo.png"}
         className={LandingPageStyle["my-photo"]}
         alt="my photo"
       ></img>
