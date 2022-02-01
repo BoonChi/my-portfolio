@@ -11,7 +11,7 @@
     "export": "next export",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest",
+    "test": "jest --watch",
     "test:e2e": "playwright test",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build -t true"
@@ -55,6 +55,7 @@
     "setupFilesAfterEnv": [
       "<rootDir>/setupTests.js"
     ],
+    "testPathIgnorePatterns": ["<rootDir>/node_modules/", "<rootDir>/.next/","<rootDir>/e2e/"],
     "transform": {
       "^.+\\.(ts|tsx)$": "ts-jest"
     },
