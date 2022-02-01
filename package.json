@@ -6,14 +6,14 @@
   "homepage": "http://BoonChi.github.io/my-portfolio",
   "scripts": {
     "predev": "tsc",
-    "dev": "NODE_ENV_PROD=true next dev",
-    "build": "next build && next export -o build",
+    "dev": "next dev",
+    "build": "next build && next export -o build && cp .nojekyll build/.nojekyll",
     "export": "next export",
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build -t true"
   },
   "pre-commit": [
     "lint"

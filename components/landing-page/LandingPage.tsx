@@ -1,19 +1,23 @@
-import CustomButton from "components/common/button/CustomButton";
-import Description from "components/common/Description";
-import LandingPageStyle from "./LandingPage.module.scss";
-import { descriptionArray, textArray } from "./variable";
+import CustomButton from 'components/common/button/CustomButton'
+import Description from 'components/common/Description'
+import { useRouter } from 'next/router'
+import LandingPageStyle from './LandingPage.module.scss'
+import { descriptionArray, textArray } from './variable'
 
 type Props = {
-  handleShowProject: () => void;
-};
+  handleShowProject: () => void
+}
 
 const LandingPage: React.FC<Props> = ({ handleShowProject }) => {
+  const basePath = useRouter().basePath
+  const src = '/my-photo.png'
+  const finalSrc = basePath?.charAt(0) === '/' ? basePath + src : src
   return (
-    <div className={LandingPageStyle["main"]}>
+    <div className={LandingPageStyle['main']}>
       <img
-        src={"my-photo.png"}
-        className={LandingPageStyle["my-photo"]}
-        alt="my photo"
+        src={finalSrc}
+        className={LandingPageStyle['my-photo']}
+        alt='my photo'
       ></img>
       {textArray.map((text, index) => (
         <div
@@ -29,15 +33,15 @@ const LandingPage: React.FC<Props> = ({ handleShowProject }) => {
       ))}
       <br />
       <CustomButton
-        buttonVariant="warning"
+        buttonVariant='warning'
         buttonHandler={() => handleShowProject()}
-        buttonName="Click here"
+        buttonName='Click here'
         buttonAnimation={true}
       >
-        <span className={LandingPageStyle["home-button"]}></span>
+        <span className={LandingPageStyle['home-button']}></span>
       </CustomButton>
     </div>
-  );
-};
+  )
+}
 
-export default LandingPage;
+export default LandingPage

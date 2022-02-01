@@ -1,4 +1,4 @@
-@import "styles/common";
+@import 'styles/common';
 
 $margin-li-sizes: (
   100px 1% 0%,
@@ -8,8 +8,18 @@ $margin-li-sizes: (
   1024px 5% 0%
 );
 
+$todo-font-sizes: (
+  280px 8px,
+  300px 10px,
+  480px 30px,
+  640px 33px,
+  700px 38px,
+  1024px 42px
+);
+
 .container {
   @extend .main;
+  @include adjustment($font-size, $todo-font-sizes);
   ul {
     margin-top: 30px;
     list-style-type: none;

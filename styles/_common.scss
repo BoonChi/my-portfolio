@@ -1,4 +1,4 @@
-@import "styles/mixins";
+@import 'styles/mixins';
 $font-size: font-size;
 $margin-size: margin;
 $width-size: width;
@@ -13,6 +13,7 @@ $width-size: width;
 }
 
 .inline-control-button {
+  justify-content: center;
   display: flex;
   a {
     margin: 0% 2%;
@@ -21,7 +22,7 @@ $width-size: width;
 
 $base-color: grey;
 
-$h1-font-sizes: (300px 28px, 480px 30px, 640px 33px, 700px 38px, 1024px 42px);
+$h1-font-sizes: (320px 20px, 480px 30px, 640px 33px, 700px 38px, 1024px 42px);
 
 $margin-sizes: (100px 2%, 480px 4%, 640px 6%, 700px 8%, 1024px 10%);
 
