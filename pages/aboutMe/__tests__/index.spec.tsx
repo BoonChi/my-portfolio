@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 import { shallow } from 'enzyme'
-import AboutMe from '../index'
+import AboutMe from '../index.page'
 
 describe('About me', () => {
   it('renders About me page unchanged', () => {
