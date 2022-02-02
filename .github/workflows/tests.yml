@@ -26,8 +26,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - run: npm ci
-      - run: npm run prettier
-      - run: npm run linter
+      - run: npm run lint
       - name: Run your unit jest tests
         run: npm run test
       - name: Install Playwright
