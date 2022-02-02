@@ -1,15 +1,15 @@
 export enum todoCategory {
-  green = "Green",
-  red = "Red",
-  blue = "Blue"
+  green = 'Green',
+  red = 'Red',
+  blue = 'Blue',
 }
 
-export const todoCategoryArr = Object.values(todoCategory)
+export const todoCategoryArr = Object.values(todoCategory);
 
 export enum todoItemAction {
   edit = 'Edit',
   delete = 'Delete',
-  completed = 'Completed'
+  completed = 'Completed',
 }
 
 export const todoItemActionArray = [
@@ -19,11 +19,10 @@ export const todoItemActionArray = [
   // },
   {
     name: todoItemAction.delete,
-    color: "danger"
+    color: 'danger',
   },
   {
     name: todoItemAction.completed,
-    color: "secondary"
-  }
-]
-
+    color: 'secondary',
+  },
+];

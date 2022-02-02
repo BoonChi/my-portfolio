@@ -1,20 +1,20 @@
-import CustomButton from 'components/common/button/CustomButton'
-import React, { FormEvent } from 'react'
-import TodoModal from './todoModal'
-import TodoListItemStyle from './TodoListItem.module.scss'
+import CustomButton from 'components/common/button/CustomButton';
+import React, { FormEvent } from 'react';
+import TodoModal from './todoModal';
+import TodoListItemStyle from './TodoListItem.module.scss';
 
 interface Props<T> {
-  renderItem: (item: T) => T
-  keyExtractor: (item: T) => string
-  data: T[]
-  buttonGroup: Array<{ name: string; color: string }>
-  handleActions: (buttonName: string, todoItemId: TodoState['id']) => void
-  modalPop: boolean
-  handleModal: () => void
-  selectedTodo: TodoState
-  handleNewTodoChange: (event: FormEvent<HTMLInputElement>) => void
-  updateNewTodo: (text: TodoState['desc']) => void
-  editedTodo: TodoState['desc']
+  renderItem: (item: T) => T;
+  keyExtractor: (item: T) => string;
+  data: T[];
+  buttonGroup: Array<{ name: string; color: string }>;
+  handleActions: (buttonName: string, todoItemId: TodoState['id']) => void;
+  modalPop: boolean;
+  handleModal: () => void;
+  selectedTodo: TodoState;
+  handleNewTodoChange: (event: FormEvent<HTMLInputElement>) => void;
+  updateNewTodo: (text: TodoState['desc']) => void;
+  editedTodo: TodoState['desc'];
 }
 
 const todoListItem: React.FC<Props<{ [key: string]: any }>> = ({
@@ -33,7 +33,7 @@ const todoListItem: React.FC<Props<{ [key: string]: any }>> = ({
   return (
     <div>
       <ul>
-        {data.map((each) => (
+        {data.map(each => (
           <li
             key={keyExtractor(each)}
             className={TodoListItemStyle['inline-control-button']}
@@ -70,12 +70,12 @@ const todoListItem: React.FC<Props<{ [key: string]: any }>> = ({
         handleClose={handleModal}
         title={'Edit'}
         oldTodo={selectedTodo}
-        handleNewTodoChange={(event) => handleNewTodoChange(event)}
-        updateNewTodo={(text) => updateNewTodo(text)}
+        handleNewTodoChange={event => handleNewTodoChange(event)}
+        updateNewTodo={text => updateNewTodo(text)}
         editedTodo={editedTodo}
       />
     </div>
-  )
-}
+  );
+};
 
-export default todoListItem
+export default todoListItem;

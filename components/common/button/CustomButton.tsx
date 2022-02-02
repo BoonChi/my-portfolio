@@ -1,5 +1,5 @@
-import { Button } from "react-bootstrap";
-import CustomButtonStyle from "./CustomButton.module.scss";
+import { Button } from 'react-bootstrap';
+import CustomButtonStyle from './CustomButton.module.scss';
 type Props = {
   buttonName: string;
   buttonHandler?: (input: any) => void;
@@ -18,8 +18,8 @@ const CustomButton: React.FC<Props> = ({
         variant={buttonVariant}
         onClick={buttonHandler}
         size="lg"
-        className={`${CustomButtonStyle["custom-button"]} ${
-          buttonAnimation ? CustomButtonStyle["custom-button-animation"] : null
+        className={`${CustomButtonStyle['custom-button']} ${
+          buttonAnimation ? CustomButtonStyle['custom-button-animation'] : null
         }`}
       >
         {buttonName}

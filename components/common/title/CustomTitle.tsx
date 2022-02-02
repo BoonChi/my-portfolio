@@ -1,5 +1,5 @@
-import React from "react";
-import CustomTitle from "./CustomTitle.module.scss";
+import React from 'react';
+import CustomTitle from './CustomTitle.module.scss';
 type Props = {
   title: string;
 };
@@ -7,7 +7,7 @@ type Props = {
 const Title: React.FC<Props> = ({ title }) => {
   return (
     <div>
-      <h1 className={CustomTitle["title"]}>{title}</h1>
+      <h1 className={CustomTitle['title']}>{title}</h1>
     </div>
   );
 };

@@ -1,16 +1,16 @@
-import { Dispatch } from "@reduxjs/toolkit";
-import React, { FormEvent, useState } from "react";
-import { useAppDispatch, useAppSelector } from "components/hooks";
+import { Dispatch } from '@reduxjs/toolkit';
+import React, { FormEvent, useState } from 'react';
+import { useAppDispatch, useAppSelector } from 'components/hooks';
 import {
   addTodo,
   selectActionReducer,
   selectTodoList,
   updateTodo,
-} from "components/todo/todoSlice";
-import TodoStyles from "./Todo.module.scss";
-import TodoListItem from "components/todo/todoListItem";
-import { todoItemAction, todoItemActionArray } from "constant/index";
-import TodoHeader from "components/todo/todoHeader";
+} from 'components/todo/todoSlice';
+import TodoStyles from './Todo.module.scss';
+import TodoListItem from 'components/todo/todoListItem';
+import { todoItemAction, todoItemActionArray } from 'constant/index';
+import TodoHeader from 'components/todo/todoHeader';
 
 const Todo = () => {
   // from redux store
@@ -20,14 +20,14 @@ const Todo = () => {
   const handleAdd = (text: string) => {
     if (!text) return;
     dispatch(addTodo(text));
-    setUserInput("");
+    setUserInput('');
   };
 
   // from local state
-  const [userInput, setUserInput] = useState("");
+  const [userInput, setUserInput] = useState('');
   const [modalPop, setModalPop] = useState(false);
   const [selectedTodo, setSelectedTodo] = useState({} as TodoState);
-  const [editedTodo, setEditedTodo] = useState("");
+  const [editedTodo, setEditedTodo] = useState('');
 
   const handleChange = (event: FormEvent<HTMLInputElement>) => {
     setUserInput(event.currentTarget.value);
@@ -39,17 +39,17 @@ const Todo = () => {
 
   const handleButtonAction = (
     buttonName: string,
-    todoItemId: TodoState["id"]
+    todoItemId: TodoState['id']
   ) => {
     if (buttonName === todoItemAction.edit) {
       setModalPop(true);
-      setSelectedTodo(todoList.filter((todo) => todo.id === todoItemId)[0]);
-      return "";
+      setSelectedTodo(todoList.filter(todo => todo.id === todoItemId)[0]);
+      return '';
     }
     dispatch(selectActionReducer(buttonName, todoItemId));
   };
 
-  const handleUpdate = (text: TodoState["desc"]) => {
+  const handleUpdate = (text: TodoState['desc']) => {
     dispatch(
       updateTodo({
         id: selectedTodo.id,
@@ -57,21 +57,21 @@ const Todo = () => {
         completed: selectedTodo.completed,
       })
     );
-    setEditedTodo("");
+    setEditedTodo('');
     setModalPop(false);
   };
 
   return (
-    <div className={TodoStyles["container"]}>
+    <div className={TodoStyles['container']}>
       <TodoHeader
-        todoAppTitle={"To Do List"}
-        handleAdd={(text) => handleAdd(text)}
-        addButtonName={"Add"}
-        handleChange={(event) => handleChange(event)}
+        todoAppTitle={'To Do List'}
+        handleAdd={text => handleAdd(text)}
+        addButtonName={'Add'}
+        handleChange={event => handleChange(event)}
         userInput={userInput}
       />
       <TodoListItem
-        renderItem={(todo) => todo}
+        renderItem={todo => todo}
         keyExtractor={({ id }) => id}
         data={todoList}
         buttonGroup={todoItemActionArray}
@@ -81,7 +81,7 @@ const Todo = () => {
         modalPop={modalPop}
         handleModal={() => setModalPop(!modalPop)}
         selectedTodo={selectedTodo}
-        updateNewTodo={(text) => handleUpdate(text)}
+        updateNewTodo={text => handleUpdate(text)}
         handleNewTodoChange={handleNewTodoChange}
         editedTodo={editedTodo}
       />

@@ -1,14 +1,14 @@
-import React, { FormEvent } from "react";
-import { Button, Modal } from "react-bootstrap";
+import React, { FormEvent } from 'react';
+import { Button, Modal } from 'react-bootstrap';
 
 type Props = {
   show: boolean;
   handleClose: () => void;
   title: string;
   oldTodo: TodoState;
-  updateNewTodo: (text: TodoState["desc"]) => void;
+  updateNewTodo: (text: TodoState['desc']) => void;
   handleNewTodoChange: (event: FormEvent<HTMLInputElement>) => void;
-  editedTodo: TodoState["desc"];
+  editedTodo: TodoState['desc'];
 };
 
 const TodoModal: React.FC<Props> = ({
@@ -31,7 +31,7 @@ const TodoModal: React.FC<Props> = ({
             placeholder={oldTodo.desc}
             value={editedTodo}
             type="text"
-            onChange={(event) => handleNewTodoChange(event)}
+            onChange={event => handleNewTodoChange(event)}
           />
         </Modal.Body>
         <Modal.Footer>

@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useState } from 'react';
 
 type Props = {
   saveArticle: (article: IArticle | any) => void;
@@ -10,11 +10,11 @@ export const AddArticle: React.FC<Props> = ({
   triggerForbidden,
 }) => {
   const [article, setArticle] = useState({
-    id: "",
-    body: "",
-    title: "",
+    id: '',
+    body: '',
+    title: '',
   });
-  const forbiddenWord = ["fuck", "smash"];
+  const forbiddenWord = ['fuck', 'smash'];
   const handleArticleData = (event: FormEvent<HTMLInputElement>) => {
     // const newArticle = {}
 
@@ -42,9 +42,9 @@ export const AddArticle: React.FC<Props> = ({
     //   return triggerForbidden();
     saveArticle(article);
     setArticle({
-      id: "",
-      body: "",
-      title: "",
+      id: '',
+      body: '',
+      title: '',
     });
   };
 

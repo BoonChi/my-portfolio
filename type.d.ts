@@ -1,38 +1,38 @@
 interface IArticle {
-  id: number
-  title: string
-  body: string
+  id: number;
+  title: string;
+  body: string;
 }
 
 type ArticleState = {
-  articles: IArticle[]
-}
+  articles: IArticle[];
+};
 
 type CounterState = {
-  value: number
-}
+  value: number;
+};
 
 type TodoState = {
-  id: string,
-  desc: string,
-  completed: boolean
-}
+  id: string;
+  desc: string;
+  completed: boolean;
+};
 
 type ArticleAction = {
-  type: string
-  article: IArticle
-}
+  type: string;
+  article: IArticle;
+};
 
-type DispatchType = (args: ArticleAction) => ArticleAction
+type DispatchType = (args: ArticleAction) => ArticleAction;
 
 type IBook = {
-  title: string
-  description: string
-  id: number
-}
+  title: string;
+  description: string;
+  id: number;
+};
 
 type ISideBar = {
-  id: number
-  name: string
-}
+  id: number;
+  name: string;
+};
 declare module '*.mp3';
