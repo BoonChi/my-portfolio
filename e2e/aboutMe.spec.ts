@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test'
 
-test('should navigate to the aboutMe page', async ({ page }) => {
+test('should navigate to the aboutMe page', async ({ page, baseURL }) => {
   // Start from the index page (the baseURL is set via the webServer in the playwright.config.ts)
-  await page.goto('/')
+  await page.goto('/' + baseURL)
   // Find an element with the text 'About Page' and click on it
   await page.click('text=About Me')
   // The new url should be "/about" (baseURL is used there)
