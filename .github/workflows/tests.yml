@@ -26,13 +26,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - run: npm ci
+      - name: Run your unit jest tests
+        run: npm run test
       - name: Install Playwright
         run: npx playwright install --with-deps
-      - name: Run your tests
+      - name: Run your e2e tests
         run: npm run test:e2e
-      - name: Upload test results
-        if: always()
-        uses: actions/upload-artifact@v2
-        with:
-          name: playwright-results
-          path: test-results

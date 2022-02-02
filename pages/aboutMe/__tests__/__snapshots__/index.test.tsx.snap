@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About me renders About me page unchanged 1`] = `
+<div>
+  <div
+    class="main"
+  >
+    <h1>
+      About Chi
+    </h1>
+  </div>
+</div>
+`;
+
+exports[`About me renders About mepage unchanged 1`] = `
+<div>
+  <div
+    class="main"
+  >
+    <h1>
+      About Chi
+    </h1>
+  </div>
+</div>
+`;
