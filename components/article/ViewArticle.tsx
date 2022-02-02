@@ -1,8 +1,8 @@
-import React, { useCallback } from "react";
-import { Dispatch } from "redux";
-import { useDispatch } from "react-redux";
-import Title from "../common/title/CustomTitle";
-import Description from "../common/Description";
+import React, { useCallback } from 'react';
+import { Dispatch } from 'redux';
+import { useDispatch } from 'react-redux';
+import Title from '../common/title/CustomTitle';
+import Description from '../common/Description';
 
 type Props = {
   article: IArticle;

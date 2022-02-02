@@ -1,6 +1,6 @@
-import { Container, Nav, Navbar } from "react-bootstrap";
-import Link from "next/link";
-import CustomNavbarStyle from "./CustomNavbar.module.scss";
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import Link from 'next/link';
+import CustomNavbarStyle from './CustomNavbar.module.scss';
 
 interface INavbarLink {
   name: string;
@@ -15,10 +15,10 @@ const CustomNavbar: React.FC<Props> = ({ navItems }) => {
   return (
     <div>
       <nav className="navbar navbar-light">
-        <Link href={"/"} passHref>
+        <Link href={'/'} passHref>
           <a className="navbar-brand">Portfolio</a>
         </Link>
-        <Link href={"/aboutMe"} passHref>
+        <Link href={'/aboutMe'} passHref>
           <a className="navbar-brand">About Me</a>
         </Link>
       </nav>

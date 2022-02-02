@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { Card } from "react-bootstrap";
-import CustomButton from "components/common/button/CustomButton";
-import personalProjectsStyle from "./PersonalProjects.module.scss";
+import Link from 'next/link';
+import { Card } from 'react-bootstrap';
+import CustomButton from 'components/common/button/CustomButton';
+import personalProjectsStyle from './PersonalProjects.module.scss';
 
 interface IPersonalProjectsProps {
   url: string;
@@ -21,7 +21,7 @@ const PersonalProjects: React.FC<Props> = ({ projects }) => {
         <Card
           bg="light"
           key={index}
-          className={personalProjectsStyle["card-body"]}
+          className={personalProjectsStyle['card-body']}
         >
           <Card.Header>Featured {index + 1}</Card.Header>
           <Card.Body>

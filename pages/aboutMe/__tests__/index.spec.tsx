@@ -1,18 +1,18 @@
-import { render } from '@testing-library/react'
-import { shallow } from 'enzyme'
-import AboutMe from '../index.page'
+import { render } from '@testing-library/react';
+import { shallow } from 'enzyme';
+import AboutMe from '../index.page';
 
 describe('About me', () => {
   it('renders About me page unchanged', () => {
-    const { container } = render(<AboutMe />)
-    expect(container).toMatchSnapshot()
-  })
+    const { container } = render(<AboutMe />);
+    expect(container).toMatchSnapshot();
+  });
 
   it('renders and reads H1 text', () => {
-    const wrapper = shallow(<AboutMe />)
+    const wrapper = shallow(<AboutMe />);
 
-    const heading = <h1>About Chi</h1>
+    const heading = <h1>About Chi</h1>;
 
-    expect(wrapper.contains(heading)).toEqual(true)
-  })
-})
+    expect(wrapper.contains(heading)).toEqual(true);
+  });
+});

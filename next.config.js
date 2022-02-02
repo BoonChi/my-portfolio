@@ -1,11 +1,11 @@
-const isProd = process.env.NODE_ENV === 'production'
+const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
   basePath: !isProd ? '' : '/my-portfolio',
   assetPrefix: !isProd ? '' : '/my-portfolio/',
   pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
   webpack(config, options) {
-    const { isServer } = options
+    const { isServer } = options;
     config.module.rules.push({
       test: /\.(ogg|mp3|wav|mpe?g)$/i,
       exclude: config.exclude,
@@ -22,7 +22,7 @@ module.exports = {
           },
         },
       ],
-    })
-    return config
+    });
+    return config;
   },
-}
+};

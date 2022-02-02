@@ -1,16 +1,16 @@
-import Link from 'next/link'
-import React, { FormEvent } from 'react'
-import CustomButton from 'components/common/button/CustomButton'
-import Title from 'components/common/title/CustomTitle'
-import TodoHeaderStyle from './TodoHeader.module.scss'
+import Link from 'next/link';
+import React, { FormEvent } from 'react';
+import CustomButton from 'components/common/button/CustomButton';
+import Title from 'components/common/title/CustomTitle';
+import TodoHeaderStyle from './TodoHeader.module.scss';
 
 type Props = {
-  todoAppTitle: string
-  handleAdd: (text: string) => void
-  addButtonName: string
-  userInput: string
-  handleChange: (event: FormEvent<HTMLInputElement>) => void
-}
+  todoAppTitle: string;
+  handleAdd: (text: string) => void;
+  addButtonName: string;
+  userInput: string;
+  handleChange: (event: FormEvent<HTMLInputElement>) => void;
+};
 const TodoHeader: React.FC<Props> = ({
   todoAppTitle,
   handleAdd,
@@ -23,16 +23,16 @@ const TodoHeader: React.FC<Props> = ({
       <Title title={todoAppTitle}></Title>
       <div className={TodoHeaderStyle['inline-control-button']}>
         <input
-          type='text'
+          type="text"
           value={userInput}
-          onChange={(event) => handleChange(event)}
-          placeholder='Enter todo'
+          onChange={event => handleChange(event)}
+          placeholder="Enter todo"
           style={{ marginRight: '20px', borderRadius: '4px' }}
         />
         <div>
           <a>
             <CustomButton
-              buttonVariant='success'
+              buttonVariant="success"
               buttonName={addButtonName}
               buttonHandler={() => handleAdd(userInput)}
             />
@@ -45,7 +45,7 @@ const TodoHeader: React.FC<Props> = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TodoHeader
+export default TodoHeader;

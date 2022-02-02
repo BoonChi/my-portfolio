@@ -1,23 +1,23 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "styles/globals.css";
-import type { AppProps } from "next/app";
-import Head from "next/head";
-import { Provider } from "react-redux";
-import store from "../components/store";
-import CustomNavbar from "components/common/navbar/CustomNavbar";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'styles/globals.css';
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
+import { Provider } from 'react-redux';
+import store from '../components/store';
+import CustomNavbar from 'components/common/navbar/CustomNavbar';
 
 const navItemArray = [
   {
-    link: "/aboutMe",
-    name: "About",
+    link: '/aboutMe',
+    name: 'About',
   },
   {
-    link: "/todo",
-    name: "Todo",
+    link: '/todo',
+    name: 'Todo',
   },
   {
-    link: "/pomodoro",
-    name: "Pomodoro",
+    link: '/pomodoro',
+    name: 'Pomodoro',
   },
 ];
 
