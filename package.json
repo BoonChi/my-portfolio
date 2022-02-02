@@ -9,7 +9,7 @@
     "dev": "next dev",
     "build": "next build && next export -o build && cp .nojekyll build/.nojekyll",
     "export": "next export",
-    "start": "next start",
+    "start": "npm run build && next start",
     "lint": "next lint",
     "test": "jest --watch",
     "test:e2e": "playwright test",
@@ -55,7 +55,11 @@
     "setupFilesAfterEnv": [
       "<rootDir>/setupTests.js"
     ],
-    "testPathIgnorePatterns": ["<rootDir>/node_modules/", "<rootDir>/.next/","<rootDir>/e2e/"],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/.next/",
+      "<rootDir>/e2e/"
+    ],
     "transform": {
       "^.+\\.(ts|tsx)$": "ts-jest"
     },
