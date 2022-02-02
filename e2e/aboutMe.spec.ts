@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test'
 
-const isProd = process.env.NODE_ENV === 'production'
-const baseUrl = !isProd ? '' : "/my-portfolio"
+const baseUrl = !process.env.CI ? '' : "/my-portfolio"
 
 test('should navigate to the aboutMe page', async ({ page }) => {
   // Start from the index page (the baseURL is set via the webServer in the playwright.config.ts)
