@@ -19,7 +19,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build -t true",
     "postinstall": "tsc",
-    "start:prod": "node build/main.js",
+    "start:prod": "npm run start",
     "format:prettier": "npm run prettier:base -- --write \"**/*.{js,ts,tsx,json,md,mdx}\""
   },
   "pre-commit": [
