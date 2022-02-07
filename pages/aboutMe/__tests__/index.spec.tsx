@@ -1,5 +1,4 @@
-import { render } from '@testing-library/react';
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import AboutMe from '../index.page';
 
 describe('About me', () => {
@@ -9,10 +8,12 @@ describe('About me', () => {
   });
 
   it('renders and reads H1 text', () => {
-    const wrapper = shallow(<AboutMe />);
+    render(<AboutMe />);
 
-    const heading = <h1>About Chi</h1>;
+    const heading = screen.getByRole('heading', {
+      name: 'About Chi',
+    });
 
-    expect(wrapper.contains(heading)).toEqual(true);
+    expect(heading).toBeInTheDocument();
   });
 });

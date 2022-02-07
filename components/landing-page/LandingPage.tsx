@@ -1,21 +1,18 @@
 import CustomButton from 'components/common/button/CustomButton';
 import Description from 'components/common/Description';
-import { useRouter } from 'next/router';
 import LandingPageStyle from './LandingPage.module.scss';
 import { descriptionArray, textArray } from './variable';
 
 type Props = {
   handleShowProject: () => void;
+  photoSrc: string;
 };
 
-const LandingPage: React.FC<Props> = ({ handleShowProject }) => {
-  const basePath = useRouter().basePath;
-  const src = '/my-photo.png';
-  const finalSrc = basePath?.charAt(0) === '/' ? basePath + src : src;
+const LandingPage: React.FC<Props> = ({ handleShowProject, photoSrc }) => {
   return (
     <div className={LandingPageStyle['main']}>
       <img
-        src={finalSrc}
+        src={photoSrc}
         className={LandingPageStyle['my-photo']}
         alt="my photo"
       ></img>
