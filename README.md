@@ -1,1 +1,1 @@
-Navigate to https://my-portfolio-blond-one.vercel.app/ to view my portfolio.
+Navigate to https://my-portfolio-djikqavve-boonchi.vercel.app/ to view my portfolio.
