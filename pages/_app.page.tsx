@@ -3,7 +3,7 @@ import 'styles/globals.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Provider } from 'react-redux';
-import store from '../components/store';
+import store from 'components/store';
 import CustomNavbar from 'components/common/navbar/CustomNavbar';
 
 const navItemArray = [
@@ -21,7 +21,7 @@ const navItemArray = [
   },
 ];
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <Provider store={store}>
       <Head>
@@ -34,6 +34,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
     </Provider>
   );
-}
+};
 
 export default MyApp;
