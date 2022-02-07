@@ -4,7 +4,6 @@
   "private": true,
   "rootDir": ".",
   "homepage": "http://BoonChi.github.io/my-portfolio",
-  "main": "index.page.tsx",
   "scripts": {
     "predev": "tsc",
     "prettier:base": "prettier --ignore-path .gitignore",
