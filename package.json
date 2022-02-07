@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "rootDir": ".",
-  "homepage": "http://BoonChi.github.io/my-portfolio",
   "scripts": {
     "predev": "tsc",
     "prettier:base": "prettier --ignore-path .gitignore",
@@ -17,9 +16,6 @@
     "test": "jest",
     "test:e2e": "playwright test",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -t true",
-    "postinstall": "npm run heroku:build",
-    "heroku:build": "tsc",
     "tsc": "./node_modules/typescript/bin/tsc",
     "format:prettier": "npm run prettier:base -- --write \"**/*.{js,ts,tsx,json,md,mdx}\""
   },

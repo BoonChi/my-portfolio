@@ -1,8 +1,4 @@
-const isProd = process.env.NODE_ENV === 'production';
-
 module.exports = {
-  basePath: !isProd ? '' : '/my-portfolio',
-  assetPrefix: !isProd ? '' : '/my-portfolio/',
   pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
   webpack(config, options) {
     const { isServer } = options;
