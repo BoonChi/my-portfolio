@@ -18,6 +18,7 @@
     "test:e2e": "playwright test",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build -t true",
+    "postinstall": "tsc",
     "format:prettier": "npm run prettier:base -- --write \"**/*.{js,ts,tsx,json,md,mdx}\""
   },
   "pre-commit": [
