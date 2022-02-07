@@ -9,7 +9,7 @@
     "predev": "tsc",
     "prettier:base": "prettier --ignore-path .gitignore",
     "dev": "next dev",
-    "build": "next build && next export -o build && cp .nojekyll build/.nojekyll && tsc",
+    "build": "next build && next export -o build && cp .nojekyll build/.nojekyll",
     "export": "next export",
     "start": "npm run build && next start",
     "lint": "next lint && npm run format:prettier",
@@ -19,7 +19,6 @@
     "test:e2e": "playwright test",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build -t true",
-    "prestart": "tsc",
     "format:prettier": "npm run prettier:base -- --write \"**/*.{js,ts,tsx,json,md,mdx}\""
   },
   "pre-commit": [
