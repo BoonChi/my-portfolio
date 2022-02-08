@@ -7,12 +7,10 @@ describe('About me', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('renders and reads H1 text', () => {
+  it('renders and reads p text', () => {
     render(<AboutMe />);
 
-    const heading = screen.getByRole('heading', {
-      name: 'About Chi',
-    });
+    const heading = screen.getByText(/Poland/i);
 
     expect(heading).toBeInTheDocument();
   });
