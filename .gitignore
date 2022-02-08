@@ -36,4 +36,5 @@ yarn-error.log*
 # vscode setting
 .vscode
 
-tsconfig.tsbuildinfo
+# TypeScript cache
+*.tsbuildinfo

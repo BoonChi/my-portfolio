@@ -1,1 +1,8 @@
-@import "styles/common";
+@import 'styles/common';
+
+.lists {
+  text-align: left;
+  ul {
+    margin: 10% 5%;
+  }
+}
