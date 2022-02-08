@@ -1,1 +1,1 @@
-Navigate to https://my-portfolio-boonchi.vercel.app/ to view my portfolio.
+Navigate to https://my-portfolio-boonchi.vercel.app/ or https://hum-boon-chi-portfolio.herokuapp.com/ to view my portfolio.
