@@ -13,9 +13,3 @@ $img-sizes: (
   @include boxShadow(3px, 2px, 2px, grey);
   @include adjustment(width, $img-sizes);
 }
-
-.buttons {
-  display: flex;
-  width: 50vw;
-  justify-content: space-around;
-}

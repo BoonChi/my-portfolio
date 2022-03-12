@@ -5,19 +5,16 @@ import Head from 'next/head';
 import { Provider } from 'react-redux';
 import store from 'components/store';
 import CustomNavbar from 'components/common/navbar/CustomNavbar';
+import { faHome, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 const navItemArray = [
   {
+    icon: faHome,
+    link: '/',
+  },
+  {
+    icon: faInfoCircle,
     link: '/aboutMe',
-    name: 'About',
-  },
-  {
-    link: '/todo',
-    name: 'Todo',
-  },
-  {
-    link: '/pomodoro',
-    name: 'Pomodoro',
   },
 ];
 
