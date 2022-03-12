@@ -1,9 +1,11 @@
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import Link from 'next/link';
 import CustomNavbarStyle from './CustomNavbar.module.scss';
+import type { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface INavbarLink {
-  name: string;
+  icon: IconDefinition;
   link: string;
 }
 
@@ -13,14 +15,18 @@ type Props = {
 
 const CustomNavbar: React.FC<Props> = ({ navItems }) => {
   return (
-    <div>
+    <div className="container">
       <nav className="navbar navbar-light">
-        <Link href={'/'} passHref>
-          <a className="navbar-brand">Portfolio</a>
-        </Link>
-        <Link href={'/aboutMe'} passHref>
-          <a className="navbar-brand">About Me</a>
-        </Link>
+        {navItems.map((nav, index) => (
+          <Link href={nav.link} passHref key={index}>
+            <a className="navbar-brand">
+              <FontAwesomeIcon
+                icon={nav.icon}
+                style={{ fontSize: '2rem' }}
+              ></FontAwesomeIcon>
+            </a>
+          </Link>
+        ))}
       </nav>
     </div>
   );

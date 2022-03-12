@@ -1,4 +1,4 @@
-export const textArray = ['Boon Chi', 'React NODEJS Developer'];
+export const textArray = ['HUm Boon Chi', 'React NODEJS Developer'];
 
 export const descriptionArray = [
   'Hi 👋',

@@ -29,26 +29,14 @@ const LandingPage: React.FC<Props> = ({ handleShowProject, photoSrc }) => {
         <Description description={desc} key={index} />
       ))}
       <br />
-      <div className={LandingPageStyle['buttons']}>
-        <CustomButton
-          buttonVariant="warning"
-          buttonHandler={() => handleShowProject()}
-          buttonName="Click here"
-          buttonAnimation={true}
-        >
-          <span className={LandingPageStyle['home-button']}></span>
-        </CustomButton>
-        <CustomButton
-          buttonVariant="success"
-          buttonHandler={() =>
-            window.location.assign('https://chi-chat-box-demo.herokuapp.com/')
-          }
-          buttonName="Chat Box Demo"
-          buttonAnimation={true}
-        >
-          <span className={LandingPageStyle['home-button']}></span>
-        </CustomButton>
-      </div>
+      <CustomButton
+        buttonVariant="warning"
+        buttonHandler={() => handleShowProject()}
+        buttonName="Click here"
+        buttonAnimation={true}
+      >
+        <span className={LandingPageStyle['home-button']}></span>
+      </CustomButton>
     </div>
   );
 };
