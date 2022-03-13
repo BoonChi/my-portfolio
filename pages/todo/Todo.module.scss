@@ -24,9 +24,6 @@ $todo-font-sizes: (
     margin-top: 30px;
     list-style-type: none;
   }
-  li {
-    @include adjustment($margin-size, $margin-li-sizes);
-  }
 }
 
 .todo-input {

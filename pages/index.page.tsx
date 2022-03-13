@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { Container } from 'react-bootstrap';
 import PersonalProjects from 'components/personal-projects/PersonalProjects';
 import LandingPage from 'components/landing-page/LandingPage';
 
@@ -9,14 +8,23 @@ const projectsArray = [
   {
     url: '/todo',
     title: 'To do',
-    description: 'Make your todo lists now 📝',
+    link: 'https://github.com/BoonChi/my-portfolio',
     buttonColor: 'info',
+    desc: 'NextJs with Redux Store',
   },
   {
     url: '/pomodoro',
     title: 'Pomodoro',
-    description: 'Lets use our Pomodoro tracker ⏰',
+    link: 'https://github.com/BoonChi/my-portfolio',
+    buttonColor: 'success',
+    desc: 'React,UseState,UseEffect',
+  },
+  {
+    url: '',
+    title: '[In progress] Chat Box',
+    link: 'https://github.com/BoonChi/chatBox-NestJs-Postgres-ReactJs-Typescript',
     buttonColor: 'danger',
+    desc: 'Nestjs Websocket Postgres,NextJs with typescript',
   },
 ];
 

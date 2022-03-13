@@ -1,1 +1,6 @@
-@import "styles/common";
+@import 'styles/common';
+
+.pomodoro-button {
+  display: flex;
+  justify-content: center;
+}

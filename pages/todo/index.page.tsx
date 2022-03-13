@@ -9,8 +9,10 @@ import {
 } from 'components/todo/todoSlice';
 import TodoStyles from './Todo.module.scss';
 import TodoListItem from 'components/todo/todoListItem';
-import { todoItemAction, todoItemActionArray } from 'constant/index';
+import { todoItemAction } from 'constant/index';
 import TodoHeader from 'components/todo/todoHeader';
+import MainLayout from 'components/layouts/MainLayout';
+import { faCheckCircle, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const Todo = () => {
   // from redux store
@@ -61,31 +63,44 @@ const Todo = () => {
     setModalPop(false);
   };
 
+  const todoItemActionArray = [
+    {
+      name: todoItemAction.delete,
+      icon: faTrash,
+    },
+    {
+      name: todoItemAction.completed,
+      icon: faCheckCircle,
+    },
+  ];
+
   return (
-    <div className={TodoStyles['container']}>
-      <TodoHeader
-        todoAppTitle={'To Do List'}
-        handleAdd={text => handleAdd(text)}
-        addButtonName={'Add'}
-        handleChange={event => handleChange(event)}
-        userInput={userInput}
-      />
-      <TodoListItem
-        renderItem={todo => todo}
-        keyExtractor={({ id }) => id}
-        data={todoList}
-        buttonGroup={todoItemActionArray}
-        handleActions={(buttonName, todoItemId) =>
-          handleButtonAction(buttonName, todoItemId)
-        }
-        modalPop={modalPop}
-        handleModal={() => setModalPop(!modalPop)}
-        selectedTodo={selectedTodo}
-        updateNewTodo={text => handleUpdate(text)}
-        handleNewTodoChange={handleNewTodoChange}
-        editedTodo={editedTodo}
-      />
-    </div>
+    <MainLayout>
+      <div className={TodoStyles['container']}>
+        <TodoHeader
+          todoAppTitle={'To Do List'}
+          handleAdd={text => handleAdd(text)}
+          addButtonName={'Add'}
+          handleChange={event => handleChange(event)}
+          userInput={userInput}
+        />
+        <TodoListItem
+          renderItem={todo => todo}
+          keyExtractor={({ id }) => id}
+          data={todoList}
+          buttonGroup={todoItemActionArray}
+          handleActions={(buttonName, todoItemId) =>
+            handleButtonAction(buttonName, todoItemId)
+          }
+          modalPop={modalPop}
+          handleModal={() => setModalPop(!modalPop)}
+          selectedTodo={selectedTodo}
+          updateNewTodo={text => handleUpdate(text)}
+          handleNewTodoChange={handleNewTodoChange}
+          editedTodo={editedTodo}
+        />
+      </div>
+    </MainLayout>
   );
 };
 

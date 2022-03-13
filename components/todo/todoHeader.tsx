@@ -1,8 +1,8 @@
-import Link from 'next/link';
 import React, { FormEvent } from 'react';
-import CustomButton from 'components/common/button/CustomButton';
 import Title from 'components/common/title/CustomTitle';
 import TodoHeaderStyle from './TodoHeader.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 
 type Props = {
   todoAppTitle: string;
@@ -14,35 +14,24 @@ type Props = {
 const TodoHeader: React.FC<Props> = ({
   todoAppTitle,
   handleAdd,
-  addButtonName,
   userInput,
   handleChange,
 }) => {
   return (
-    <div>
+    <div className={TodoHeaderStyle['todo-top']}>
       <Title title={todoAppTitle}></Title>
-      <div className={TodoHeaderStyle['inline-control-button']}>
+      <div className={TodoHeaderStyle['todo']}>
         <input
           type="text"
           value={userInput}
           onChange={event => handleChange(event)}
           placeholder="Enter todo"
-          style={{ marginRight: '20px', borderRadius: '4px' }}
         />
-        <div>
-          <a>
-            <CustomButton
-              buttonVariant="success"
-              buttonName={addButtonName}
-              buttonHandler={() => handleAdd(userInput)}
-            />
-          </a>
-          <Link href={'/'} passHref>
-            <a>
-              <CustomButton buttonName={'Back'}></CustomButton>
-            </a>
-          </Link>
-        </div>
+        <FontAwesomeIcon
+          icon={faPlusCircle}
+          onClick={() => handleAdd(userInput)}
+          style={{ fontSize: '2rem' }}
+        ></FontAwesomeIcon>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import { Button } from 'react-bootstrap';
 import CustomButtonStyle from './CustomButton.module.scss';
 type Props = {
   buttonName: string;
-  buttonHandler?: (input: any) => void;
+  buttonHandler?: () => void;
   buttonVariant?: string;
   buttonAnimation?: boolean;
 };

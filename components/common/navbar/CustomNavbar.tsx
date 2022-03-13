@@ -1,4 +1,3 @@
-import { Container, Nav, Navbar } from 'react-bootstrap';
 import Link from 'next/link';
 import CustomNavbarStyle from './CustomNavbar.module.scss';
 import type { IconDefinition } from '@fortawesome/free-solid-svg-icons';
@@ -15,7 +14,7 @@ type Props = {
 
 const CustomNavbar: React.FC<Props> = ({ navItems }) => {
   return (
-    <div className="">
+    <div className={CustomNavbarStyle['custom-navbar']}>
       <nav className="navbar navbar-light">
         {navItems.map((nav, index) => (
           <Link href={nav.link} passHref key={index}>
