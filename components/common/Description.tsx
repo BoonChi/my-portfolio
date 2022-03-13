@@ -5,9 +5,12 @@ type Props = {
 };
 
 const Description: React.FC<Props> = ({ description }) => {
+  const array = description.split(' ');
   return (
     <div>
-      <h4>{description}</h4>
+      {array.map((desc, index) => (
+        <span key={index}>{desc + '  '}</span>
+      ))}
     </div>
   );
 };

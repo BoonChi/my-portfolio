@@ -6,6 +6,11 @@ import { Provider } from 'react-redux';
 import store from 'components/store';
 import CustomNavbar from 'components/common/navbar/CustomNavbar';
 import { faHome, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import {
+  faGithub,
+  faLinkedin,
+  faYoutube,
+} from '@fortawesome/fontawesome-free-brands';
 
 const navItemArray = [
   {
@@ -15,6 +20,21 @@ const navItemArray = [
   {
     icon: faInfoCircle,
     link: '/aboutMe',
+  },
+];
+
+const footerItemsArray = [
+  {
+    icon: faGithub,
+    link: 'https://github.com/BoonChi',
+  },
+  {
+    icon: faLinkedin,
+    link: 'https://www.linkedin.com/in/hum-b-1aab89229/',
+  },
+  {
+    icon: faYoutube,
+    link: 'https://www.youtube.com/channel/UCC64GC8w0_3E4wC1NPP7qAA',
   },
 ];
 

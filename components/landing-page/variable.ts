@@ -1,7 +1,3 @@
-export const textArray = ['HUm Boon Chi', 'React NODEJS Developer'];
+export const textArray = ['Web Developer'];
 
-export const descriptionArray = [
-  'Hi 👋',
-  'Welcome to my portfolio',
-  '🐛🎨🎉📝',
-];
+export let descriptionArray = ['👋 I"m Chi', 'Web Developer📝', '🐛🎨🎉🚀'];

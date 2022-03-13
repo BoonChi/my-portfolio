@@ -4,12 +4,12 @@ $margin-size: margin;
 $width-size: width;
 
 .main {
-  background-color: whitesmoke;
-  height: 80vh;
+  background-color: #dfcfbe;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 }
 
 .inline-control-button {

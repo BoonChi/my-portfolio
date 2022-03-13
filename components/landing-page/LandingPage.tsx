@@ -16,18 +16,21 @@ const LandingPage: React.FC<Props> = ({ handleShowProject, photoSrc }) => {
         className={LandingPageStyle['my-photo']}
         alt="my photo"
       ></img>
-      {textArray.map((text, index) => (
+      {/* {textArray.map((text, index) => (
         <div
           className={LandingPageStyle[`text-decorated-${index + 1}`]}
           key={index}
         >
           {text}
         </div>
-      ))}
+      ))}*/}
       <br />
-      {descriptionArray.map((desc, index) => (
-        <Description description={desc} key={index} />
-      ))}
+      <div className={LandingPageStyle['text-animation']}>
+        {descriptionArray.map((desc, index) => (
+          <Description description={desc} key={index} />
+        ))}
+      </div>
+
       <br />
       <CustomButton
         buttonVariant="warning"

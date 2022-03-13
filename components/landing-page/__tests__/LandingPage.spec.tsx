@@ -11,7 +11,7 @@ describe('Landing page', () => {
     fireEvent.click(screen.getByText('Click here'));
 
     // Wait for page to update with query text
-    const items = await screen.findAllByText('Welcome to my portfolio');
+    const items = await screen.findAllByText('Web');
     expect(items).toHaveLength(1);
   });
 });

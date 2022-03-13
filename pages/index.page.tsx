@@ -28,7 +28,7 @@ const App: NextPage = () => {
   const src = '/my-photo.png';
   const finalSrc = basePath?.charAt(0) === '/' ? basePath + src : src;
   return (
-    <Container fluid="sm">
+    <div>
       {showProject ? (
         <PersonalProjects projects={projectsArray} />
       ) : (
@@ -37,7 +37,7 @@ const App: NextPage = () => {
           photoSrc={finalSrc}
         />
       )}
-    </Container>
+    </div>
   );
 };
 
