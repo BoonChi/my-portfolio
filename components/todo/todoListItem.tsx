@@ -1,13 +1,14 @@
-import CustomButton from 'components/common/button/CustomButton';
 import React, { FormEvent } from 'react';
 import TodoModal from './todoModal';
 import TodoListItemStyle from './TodoListItem.module.scss';
+import type { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface Props<T> {
   renderItem: (item: T) => T;
   keyExtractor: (item: T) => string;
   data: T[];
-  buttonGroup: Array<{ name: string; color: string }>;
+  buttonGroup: Array<{ name: string; icon: IconDefinition }>;
   handleActions: (buttonName: string, todoItemId: TodoState['id']) => void;
   modalPop: boolean;
   handleModal: () => void;
@@ -31,36 +32,26 @@ const todoListItem: React.FC<Props<{ [key: string]: any }>> = ({
   editedTodo,
 }) => {
   return (
-    <div>
+    <div className={TodoListItemStyle['todo-bottom']}>
       <ul>
-        {data.map(each => (
+        {data.map((each, index) => (
           <li
             key={keyExtractor(each)}
-            className={TodoListItemStyle['inline-control-button']}
+            className={TodoListItemStyle['todo-item']}
           >
             <h5
               className={
                 each.completed ? TodoListItemStyle['completedTodo'] : undefined
               }
             >
-              {renderItem(each.desc)}
+              {index + 1}. {renderItem(each.desc)}
             </h5>
             {buttonGroup.map((button, index) => (
-              <a key={index}>
-                <CustomButton
-                  buttonVariant={button.color}
-                  buttonHandler={() =>
-                    handleActions(button.name, keyExtractor(each))
-                  }
-                  buttonName={
-                    each.completed && button.name === 'Completed'
-                      ? 'Incomplete'
-                      : button.name
-                  }
-                >
-                  {button}
-                </CustomButton>
-              </a>
+              <FontAwesomeIcon
+                icon={button.icon}
+                onClick={() => handleActions(button.name, keyExtractor(each))}
+                key={index}
+              ></FontAwesomeIcon>
             ))}
           </li>
         ))}

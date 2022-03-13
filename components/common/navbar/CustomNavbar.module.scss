@@ -1,1 +1,6 @@
 @import 'styles/mixins';
+@import 'styles/variables';
+
+.custom-navbar {
+  height: $navbar-height;
+}

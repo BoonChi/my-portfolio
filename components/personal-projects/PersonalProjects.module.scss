@@ -1,4 +1,4 @@
-@import "styles/common";
+@import 'styles/common';
 
 @keyframes text-shake {
   0% {
@@ -24,4 +24,7 @@ $p-font-sizes: (300px 20px, 480px 22px, 640px 24px, 700px 26px, 1024px 28px);
 .card-body {
   @include adjustment($margin-size, $margin-sizes);
   @include adjustment($font-size, $p-font-sizes);
+  svg:hover {
+    cursor: pointer;
+  }
 }

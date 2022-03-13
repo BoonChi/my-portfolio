@@ -1,7 +1,7 @@
 import React from 'react';
 interface Props<T> {
-  renderItem: (item: T) => string;
-  keyExtractor: (item: T) => string;
+  renderItem: (key: T) => string;
+  keyExtractor: (key: T) => string;
   data: T[];
 }
 

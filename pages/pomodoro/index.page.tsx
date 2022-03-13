@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
 import ClockController from 'components/clock/clockController';
 import Countdown from 'components/clock/countdown';
 import CustomButton from 'components/common/button/CustomButton';
 import Title from 'components/common/title/CustomTitle';
 import PlayAudio from 'components/common/PlayAudio';
 import PomodoroStyles from './Pomodoro.module.scss';
+import MainLayout from 'components/layouts/MainLayout';
 
 type timerStates = {
   session: string;
@@ -114,50 +114,47 @@ const Clock = () => {
     };
   }, [started, second, timerLoop]);
   return (
-    <div className={PomodoroStyles['main']}>
-      <Title title={'Pomodoro'} />
-      <ClockController
-        count={cycle}
-        title={'Cycle Length'}
-        handleIncrease={handleIncreaseCycle}
-        handleDecrease={handleDecreaseCycle}
-      />
-      <ClockController
-        count={breakLength}
-        title={'Break Length'}
-        handleIncrease={handleIncreaseBreak}
-        handleDecrease={handleDecreaseBreak}
-      />
-      <ClockController
-        count={sessionLength}
-        title={'Session Length'}
-        handleIncrease={handleIncreaseSession}
-        handleDecrease={handleDecreaseSession}
-      />
-      <Countdown title={timerState} minute={minute} second={second} />
-      <div className={PomodoroStyles['inline-control-button']}>
-        <a>
-          <CustomButton
-            buttonVariant="success"
-            buttonName="Start"
-            buttonHandler={handleStart}
-          />
-        </a>
-        <a>
-          <CustomButton
-            buttonVariant="danger"
-            buttonName="Reset"
-            buttonHandler={handleReset}
-          />
-        </a>
-        <Link href={'/'} passHref>
+    <MainLayout>
+      <div className={PomodoroStyles['main']}>
+        <Title title={'Pomodoro'} />
+        <ClockController
+          count={cycle}
+          title={'Cycle Length'}
+          handleIncrease={handleIncreaseCycle}
+          handleDecrease={handleDecreaseCycle}
+        />
+        <ClockController
+          count={breakLength}
+          title={'Break Length'}
+          handleIncrease={handleIncreaseBreak}
+          handleDecrease={handleDecreaseBreak}
+        />
+        <ClockController
+          count={sessionLength}
+          title={'Session Length'}
+          handleIncrease={handleIncreaseSession}
+          handleDecrease={handleDecreaseSession}
+        />
+        <Countdown title={timerState} minute={minute} second={second} />
+        <div className={PomodoroStyles['pomodoro-button']}>
           <a>
-            <CustomButton buttonName={'Back'}></CustomButton>
+            <CustomButton
+              buttonVariant="success"
+              buttonName="Start"
+              buttonHandler={handleStart}
+            />
           </a>
-        </Link>
+          <a>
+            <CustomButton
+              buttonVariant="danger"
+              buttonName="Reset"
+              buttonHandler={handleReset}
+            />
+          </a>
+        </div>
+        {timerState === timerStateTypes.break ? <PlayAudio /> : null}
       </div>
-      {timerState === timerStateTypes.break ? <PlayAudio /> : null}
-    </div>
+    </MainLayout>
   );
 };
 

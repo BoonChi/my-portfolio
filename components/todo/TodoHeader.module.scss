@@ -1,1 +1,16 @@
-@import "styles/common";
+@import 'styles/common';
+.todo-top {
+  width: 100%;
+}
+.todo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  input {
+    margin-right: 5%;
+    border-radius: 3px;
+    border: none;
+    font-size: 1rem;
+  }
+}

@@ -11,18 +11,3 @@ export enum todoItemAction {
   delete = 'Delete',
   completed = 'Completed',
 }
-
-export const todoItemActionArray = [
-  // {
-  //   name: todoItemAction.edit,
-  //   color: "info"
-  // },
-  {
-    name: todoItemAction.delete,
-    color: 'danger',
-  },
-  {
-    name: todoItemAction.completed,
-    color: 'secondary',
-  },
-];

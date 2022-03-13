@@ -1,5 +1,32 @@
-@import "styles/common";
+@import 'styles/common';
 
 .completedTodo {
   @include decorate-item-list(true);
+}
+
+.todo-bottom {
+  width: 100%;
+}
+
+$sizes: (
+  100px: 70%,
+  480px: 60%,
+  700px: 50%,
+  1024px: 40%,
+);
+
+.todo-item {
+  display: flex;
+  justify-content: center;
+  margin: 1.5% 0;
+  font-size: 1.5rem;
+  h5 {
+    font-size: 1.5rem;
+    word-wrap: break-word;
+    @include adjustment($width-size, $sizes);
+  }
+  svg {
+    margin: 0 1.5%;
+    color: grey;
+  }
 }
