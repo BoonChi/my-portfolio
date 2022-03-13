@@ -22,7 +22,6 @@ const CustomNavbar: React.FC<Props> = ({ navItems }) => {
             <a className="navbar-brand">
               <FontAwesomeIcon
                 icon={nav.icon}
-                style={{ fontSize: '2rem' }}
               ></FontAwesomeIcon>
             </a>
           </Link>
