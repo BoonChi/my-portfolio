@@ -15,7 +15,7 @@ type Props = {
 
 const CustomNavbar: React.FC<Props> = ({ navItems }) => {
   return (
-    <div className="container">
+    <div className="">
       <nav className="navbar navbar-light">
         {navItems.map((nav, index) => (
           <Link href={nav.link} passHref key={index}>

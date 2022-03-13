@@ -1,15 +1,38 @@
 @import 'styles/common';
 
-$img-sizes: (
+$sizes: (
   100px: 40%,
-  480px: 20%,
-  640px: 16%,
-  700px: 13%,
-  1024px: 10%,
+  480px: 30%,
+  640px: 40%,
+  700px: 30%,
+  1024px: 15%,
 );
 
 .my-photo {
-  border-radius: 50%;
-  @include boxShadow(3px, 2px, 2px, grey);
-  @include adjustment(width, $img-sizes);
+  @include adjustment(width, $sizes);
+  border-style: solid;
+  border-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  filter: contrast(180%);
+}
+
+.text-animation {
+  max-width: 40ch;
+  transform: scale(0.94);
+  animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+  color: white;
+  font-size: 2rem;
+}
+
+@keyframes scale {
+  100% {
+    transform: scale(1);
+  }
+}
+
+.text-animation span {
+  opacity: 0;
+  filter: blur(4px);
+  @include transition(5);
 }
