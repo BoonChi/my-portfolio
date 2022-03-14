@@ -20,7 +20,7 @@ const projectsArray = [
     desc: 'React,UseState,UseEffect',
   },
   {
-    url: '',
+    url: 'https://chi-chat-box-demo.herokuapp.com/',
     title: '[In progress] Chat Box',
     link: 'https://github.com/BoonChi/chatBox-NestJs-Postgres-ReactJs-Typescript',
     buttonColor: 'danger',
