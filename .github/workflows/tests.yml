@@ -12,11 +12,13 @@ on:
 jobs:
   build:
     timeout-minutes: 5
-    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [16.x]
+        browser: [chromium, firefox, webkit]
+        os: [ubuntu-18.04]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    runs-on: ${{ matrix.os }}
 
     steps:
       - uses: actions/checkout@v2
@@ -30,6 +32,6 @@ jobs:
       - name: Run your unit jest tests
         run: npm run test
       - name: Install Playwright
-        run: npx playwright install --with-deps
+        run: npx playwright install --with-deps ${{ matrix.browser }} chromium
       - name: Run your e2e tests
         run: npm run test:e2e
