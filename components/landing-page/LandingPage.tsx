@@ -1,40 +1,31 @@
-import CustomButton from 'components/common/button/CustomButton';
 import MainLayout from 'components/layouts/MainLayout';
 import Description from './Description/Description';
 import LandingPageStyle from './LandingPage.module.scss';
+import MainContent from './MainContent/MainContent';
+import Scroll from './Scroll/Scroll';
 import { descriptionArray } from './variable';
 
 type Props = {
-  handleShowProject: () => void;
   photoSrc: string;
 };
 
-const LandingPage: React.FC<Props> = ({ handleShowProject, photoSrc }) => {
+const LandingPage: React.FC<Props> = ({ photoSrc }) => {
   return (
     <MainLayout>
-      <div className={LandingPageStyle['main']}>
-        <img
-          src={photoSrc}
-          className={LandingPageStyle['my-photo']}
-          alt="my photo"
-        ></img>
-        <br />
+      <div className={LandingPageStyle['landing-page']}>
         <div className={LandingPageStyle['text-animation']}>
-          {descriptionArray.map((desc, index) => (
-            <Description description={desc} key={index} />
-          ))}
+          <MainContent />
+          <Description description={descriptionArray} />
         </div>
-
-        <br />
-        <CustomButton
-          buttonVariant="warning"
-          buttonHandler={() => handleShowProject()}
-          buttonName="Click here"
-          buttonAnimation={true}
-        >
-          <span className={LandingPageStyle['home-button']}></span>
-        </CustomButton>
+        <div className={LandingPageStyle['center']}>
+          <img
+            src={photoSrc}
+            className={LandingPageStyle['my-photo']}
+            alt="my photo"
+          ></img>
+        </div>
       </div>
+      <Scroll></Scroll>
     </MainLayout>
   );
 };

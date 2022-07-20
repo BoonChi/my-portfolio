@@ -74,3 +74,10 @@
     }
   }
 }
+
+@mixin stroke($innerColor, $strokeColor) {
+  color: $innerColor;
+  -webkit-text-fill-color: $innerColor; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1.4px;
+  -webkit-text-stroke-color:$strokeColor;
+}

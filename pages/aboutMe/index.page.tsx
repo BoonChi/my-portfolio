@@ -20,14 +20,12 @@ const AboutMe: React.FunctionComponent = () => {
             <li>Automation Unit test Jest</li>
             <li>Automation integration test Playwright</li>
           </ul>
-
           <ul>
             <strong>Backend stack:</strong>
             <li>Node.js(express)</li>
             <li>NoSql and Sql database</li>
             <li>Automation Unit test Jest</li>
           </ul>
-
           <ul>
             <strong>DevOps:</strong>
             <li>CI/CD(github)</li>
