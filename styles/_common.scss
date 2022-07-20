@@ -2,11 +2,11 @@
 @import 'styles/variables';
 $font-sizes: (700px 1.5rem, 1400px 2rem);
 .main {
-  background-color: #dfcfbe;
+  background-color: rgb(240,240,240);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   height: 100%;
+  justify-content: center;
+  text-align: start;
   @include adjustment($font-size, $font-sizes);
 }

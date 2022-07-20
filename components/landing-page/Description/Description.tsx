@@ -1,15 +1,14 @@
-import React from 'react';
+import DescriptionStyle from './Description.module.scss';
 
 type Props = {
-  description: string;
+  description: string[];
 };
 
-const Description: React.FC<Props> = ({ description }) => {
-  const array = description.split(' ');
+const Description = ({ description }: Props) => {
   return (
-    <div>
-      {array.map((desc, index) => (
-        <span key={index}>{desc + '  '}</span>
+    <div className={DescriptionStyle['main']}>
+      {description.map((desc, index) => (
+        <p key={index}>{desc}</p>
       ))}
     </div>
   );

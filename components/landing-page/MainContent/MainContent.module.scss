@@ -1,0 +1,31 @@
+@import 'styles/mixins';
+@import 'styles/variables';
+
+.main {
+  line-height: 3rem;
+  color:rgb(60,60,60);
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: Consolas, 'Courier New', Courier, monospace;
+  margin: 1rem 0;
+}
+
+.lightBg {
+  background-color: rgb(255, 165,0);
+  border-radius: 5px;
+  padding:0 0.2rem;
+}
+
+.greyFont {
+  color: rgb(120, 120, 120);
+}
+
+.blackStrokeFont {
+  @include stroke($inner-color,$stroke-color);
+
+  :hover  {
+      background-color: rgb(255, 99, 71,0.7);
+      -webkit-text-fill-color: black; 
+      padding:0 0.5rem;
+  }
+}

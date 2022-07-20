@@ -1,20 +1,40 @@
 @import 'styles/common';
 
-$sizes: (
+$padding-sizes: (
   100px: 20%,
   480px: 30%,
   640px: 40%,
-  700px: 30%,
+  700px: 20%,
   1024px: 15%,
 );
 
+.landing-page {
+  @extend .main;
+  display: flex;
+  flex-direction: row;
+  @include adjustment(padding,$padding-sizes);
+}
+
+$sizes: (
+  1116px: 80%,
+  1200px: 60%
+);
+
+.center {
+  text-align: center;
+}
+
 .my-photo {
-  @include adjustment(width, $sizes);
+  @media only screen and (max-width: 1116px) {
+    display: none;
+  }
+  @include adjustment(width,$sizes);
   border-style: solid;
   border-color: white;
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   filter: contrast(180%);
+  text-align: center;
 }
 
 .text-animation {
@@ -23,6 +43,7 @@ $sizes: (
   animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
   color: white;
   font-size: 2rem;
+  margin-right: 2%;
 }
 
 @keyframes scale {
