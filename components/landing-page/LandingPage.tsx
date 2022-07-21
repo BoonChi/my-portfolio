@@ -1,9 +1,10 @@
 import MainLayout from 'components/layouts/MainLayout';
+import PersonalProjects from 'components/personal-projects/PersonalProjects';
 import Description from './Description/Description';
 import LandingPageStyle from './LandingPage.module.scss';
 import MainContent from './MainContent/MainContent';
 import Scroll from './Scroll/Scroll';
-import { descriptionArray } from './variable';
+import { descriptionArray, projectsArray } from './variable';
 
 type Props = {
   photoSrc: string;
@@ -26,6 +27,7 @@ const LandingPage: React.FC<Props> = ({ photoSrc }) => {
         </div>
       </div>
       <Scroll></Scroll>
+      <PersonalProjects projects={projectsArray} />
     </MainLayout>
   );
 };
