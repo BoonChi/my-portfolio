@@ -16,7 +16,7 @@ $padding-sizes: (
 }
 
 $sizes: (
-  740px:100%,
+  800px:100%,
   1024px: 80%,
   1200px: 60%
 );
@@ -26,7 +26,7 @@ $sizes: (
 }
 
 .my-photo {
-  @media only screen and (max-width: 740px) {
+  @media only screen and (max-width: 800px) {
     display: none;
   }
   @include adjustment(width,$sizes);
