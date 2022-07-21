@@ -9,10 +9,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <Provider store={store}>
       <Head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=5.0, minimum-scale=0.86"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Component {...pageProps} />
     </Provider>

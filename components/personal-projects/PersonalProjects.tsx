@@ -18,7 +18,7 @@ type Props = {
 
 const PersonalProjects: React.FC<Props> = ({ projects }) => {
   return (
-    <div>
+    <div id="personal-projects">
       {projects.map((project, index) => (
         <Card
           bg="light"
