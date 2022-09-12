@@ -73,10 +73,10 @@ const Clock = () => {
               const playAudioPromise = new Promise(resolve => {
                 const sound = new Audio(BeepSound);
                 resolve(sound.play());
+                resetTimer();
               });
               playAudioPromise.then(() => {
                 alert('The time is up!');
-                resetTimer();
               });
             }
             return prevMinute - 1;
@@ -84,7 +84,7 @@ const Clock = () => {
         }
         return prevSecond - 1;
       });
-    }, 10);
+    }, 1000);
 
     return () => {
       clearInterval(intervalId);
