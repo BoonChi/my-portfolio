@@ -12,7 +12,6 @@ import {
 import TimerOptions from 'components/clock/Option/TimerOptions';
 import TimerController from 'components/clock/Controller/TimerController';
 import { handleConfirmationPromise } from 'utility/helper';
-import { layer } from '@fortawesome/fontawesome-svg-core';
 
 const Clock = () => {
   const options = Object.keys(ClockOption);

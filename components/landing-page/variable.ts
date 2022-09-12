@@ -12,7 +12,7 @@ export const projectsArray = [
     link: 'https://github.com/BoonChi/chatBox-NestJs-Postgres-ReactJs-Typescript',
     buttonColor: 'danger',
     desc: 'Nestjs Websocket Postgres, NextJs with typescript',
-    imgSrc: '/chatbox.png'
+    imgSrc: '/chatbox.png',
   },
   {
     url: '/pomodoro',
@@ -20,7 +20,7 @@ export const projectsArray = [
     link: 'https://github.com/BoonChi/my-portfolio',
     buttonColor: 'success',
     desc: 'NextJs with React, UseState, UseEffect, Promise, Sass',
-    imgSrc: './pomodoro.png'
+    imgSrc: './pomodoro.png',
   },
   {
     url: '/todo',
@@ -28,6 +28,6 @@ export const projectsArray = [
     link: 'https://github.com/BoonChi/my-portfolio',
     buttonColor: 'info',
     desc: 'NextJs with React Redux, UseState, Sass',
-    imgSrc: './todo.png'
-  }
+    imgSrc: './todo.png',
+  },
 ];
