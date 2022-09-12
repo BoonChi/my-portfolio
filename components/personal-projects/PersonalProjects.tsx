@@ -2,14 +2,13 @@ import { Card } from 'react-bootstrap';
 import CustomButton from 'components/common/button/CustomButton';
 import personalProjectsStyle from './PersonalProjects.module.scss';
 import Router from 'next/router';
-import { faCode } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 interface IPersonalProjectsProps {
   url: string;
   title: string;
   link: string;
   buttonColor: string;
   desc: string;
+  imgSrc: string;
 }
 
 type Props = {
@@ -18,28 +17,35 @@ type Props = {
 
 const PersonalProjects: React.FC<Props> = ({ projects }) => {
   return (
-    <div id="personal-projects">
+    <div
+      className={personalProjectsStyle['personal-projects']}
+      id="personal-projects"
+    >
       {projects.map((project, index) => (
         <Card
           bg="light"
           key={index}
           className={personalProjectsStyle['card-body']}
         >
-          <Card.Header>
-            {project.title.toUpperCase()}{' '}
-            <FontAwesomeIcon
-              icon={faCode}
-              onClick={() => Router.push(project.link)}
-              style={{ float: 'right' }}
-            ></FontAwesomeIcon>
-          </Card.Header>
+          <Card.Img variant="top" src={project.imgSrc} />
           <Card.Body>
-            <Card.Title>{project.desc} </Card.Title>
-            <CustomButton
-              buttonVariant={project.buttonColor}
-              buttonName="Lets try"
-              buttonHandler={() => Router.push(project.url)}
-            ></CustomButton>
+            <Card.Text>{project.desc} </Card.Text>
+            <div className={personalProjectsStyle['inline-buttons']}>
+              <CustomButton
+                buttonVariant={'info'}
+                buttonName="Try it"
+                buttonHandler={() =>
+                  project.url?.charAt(0) === '/'
+                    ? Router.push(project.url)
+                    : window.open(project.url, '_blank')
+                }
+              ></CustomButton>
+              <CustomButton
+                buttonVariant={'success'}
+                buttonName="Code"
+                buttonHandler={() => window.open(project.link, '_blank')}
+              ></CustomButton>
+            </div>
           </Card.Body>
         </Card>
       ))}

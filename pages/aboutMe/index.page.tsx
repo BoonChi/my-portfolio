@@ -30,6 +30,7 @@ const AboutMe: React.FunctionComponent = () => {
             <strong>DevOps:</strong>
             <li>CI/CD(github)</li>
             <li>Docker</li>
+            <li>AWS cloud services</li>
           </ul>
         </div>
       </div>

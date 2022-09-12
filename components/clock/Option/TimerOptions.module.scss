@@ -1,0 +1,13 @@
+.timer-options {
+  cursor: pointer;
+  div {
+    &:hover {
+        opacity: 20%;
+        cursor: pointer;
+        font-size: larger;
+    }
+    padding: 2%;
+  }
+  display: flex;
+  justify-content: center;
+}

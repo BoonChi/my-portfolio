@@ -21,10 +21,29 @@ $p-font-sizes: (300px 20px, 480px 22px, 640px 24px, 700px 26px, 1024px 28px);
   @include adjustment($font-size, $h1-font-sizes);
 }
 
+$card-margin-sizes: (
+  100px 2%,
+  480px 4%,
+  640px 6%,
+  700px 8%,
+  1024px 1%
+);
+
 .card-body {
-  @include adjustment($margin-size, $margin-sizes);
+  @include adjustment($margin-size, $card-margin-sizes);
   @include adjustment($font-size, $p-font-sizes);
   svg:hover {
     cursor: pointer;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .personal-projects {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .card-body {
+    width: calc(100% / 3)
   }
 }

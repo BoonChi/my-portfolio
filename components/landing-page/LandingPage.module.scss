@@ -5,7 +5,7 @@ $padding-sizes: (
   480px: 30%,
   640px: 40%,
   700px: 20%,
-  1024px: 15%,
+  1024px: 5%,
 );
 
 .landing-page {
@@ -26,7 +26,7 @@ $sizes: (
 }
 
 .my-photo {
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1024px) {
     display: none;
   }
   @include adjustment(width,$sizes);
@@ -39,7 +39,6 @@ $sizes: (
 }
 
 .text-animation {
-  max-width: 40ch;
   transform: scale(0.94);
   animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
   color: white;
@@ -47,7 +46,7 @@ $sizes: (
   @media only screen and (max-width: 300px) {
     font-size: 1.7rem;
   }
-  margin-right: 2%;
+  margin: 2%;
 }
 
 @keyframes scale {

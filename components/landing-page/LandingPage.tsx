@@ -1,16 +1,20 @@
 import MainLayout from 'components/layouts/MainLayout';
 import PersonalProjects from 'components/personal-projects/PersonalProjects';
+import { useRouter } from 'next/router';
 import Description from './Description/Description';
 import LandingPageStyle from './LandingPage.module.scss';
 import MainContent from './MainContent/MainContent';
 import Scroll from './Scroll/Scroll';
 import { descriptionArray, projectsArray } from './variable';
 
-type Props = {
-  photoSrc: string;
-};
-
-const LandingPage: React.FC<Props> = ({ photoSrc }) => {
+const LandingPage: React.FC = () => {
+  const basePath = useRouter().basePath;
+  const convertPath = (path: string) =>
+    basePath?.charAt(0) === '/' ? basePath + path : path;
+  const convertedProjectArray = projectsArray.map(project => {
+    convertPath(project.imgSrc);
+    return project;
+  });
   return (
     <MainLayout>
       <div className={LandingPageStyle['landing-page']}>
@@ -20,14 +24,14 @@ const LandingPage: React.FC<Props> = ({ photoSrc }) => {
         </div>
         <div className={LandingPageStyle['center']}>
           <img
-            src={photoSrc}
+            src={convertPath('/my-photo.png')}
             className={LandingPageStyle['my-photo']}
             alt="my photo"
           ></img>
         </div>
       </div>
       <Scroll></Scroll>
-      <PersonalProjects projects={projectsArray} />
+      <PersonalProjects projects={convertedProjectArray} />
     </MainLayout>
   );
 };

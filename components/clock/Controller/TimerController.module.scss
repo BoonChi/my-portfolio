@@ -1,0 +1,6 @@
+@import 'styles/common';
+
+.timer-button {
+  @extend .inline-buttons;
+  width: 100%;
+}

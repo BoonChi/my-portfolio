@@ -1,13 +1,20 @@
 import React from 'react';
 import CustomTitle from './CustomTitle.module.scss';
 type Props = {
-  title: string;
+  title: string | number;
+  larger?: boolean;
 };
 
-const Title: React.FC<Props> = ({ title }) => {
+const Title: React.FC<Props> = ({ title, larger }) => {
   return (
     <div>
-      <h1 className={CustomTitle['title']}>{title}</h1>
+      <h1
+        className={`${CustomTitle['title']} ${
+          larger ? CustomTitle['bolderAndLarger'] : null
+        }`}
+      >
+        {title}
+      </h1>
     </div>
   );
 };

@@ -1,158 +1,111 @@
 import React, { useEffect, useState } from 'react';
-import ClockController from 'components/clock/clockController';
-import Countdown from 'components/clock/countdown';
-import CustomButton from 'components/common/button/CustomButton';
 import Title from 'components/common/title/CustomTitle';
-import PlayAudio from 'components/common/PlayAudio';
+import BeepSound from 'public/beep.mp3';
 import PomodoroStyles from './Pomodoro.module.scss';
 import MainLayout from 'components/layouts/MainLayout';
+import {
+  ClockOption,
+  ConfirmationAction,
+  intialSecond,
+  secondCountFrom,
+} from 'components/clock/Constant';
+import TimerOptions from 'components/clock/Option/TimerOptions';
+import TimerController from 'components/clock/Controller/TimerController';
+import { handleConfirmationPromise } from 'utility/helper';
+import { layer } from '@fortawesome/fontawesome-svg-core';
 
-type timerStates = {
-  session: string;
-  break: string;
-};
 const Clock = () => {
-  const initialSessionValue = 1;
-  const initialBreakValue = 1;
-  const secondMaxValue = 3;
-
-  const timerStateTypes: timerStates = {
-    session: 'Session',
-    break: 'Break',
-  };
-  const [breakLength, setBreakLength] = useState(initialBreakValue);
-  const [sessionLength, setSessionLength] = useState(initialSessionValue);
-  const [minute, setMinute] = useState(initialSessionValue);
-  const [second, setSecond] = useState(0);
+  const options = Object.keys(ClockOption);
+  const [option, setOption] = useState(options[0]);
+  const [minute, setMinute] = useState(ClockOption.Pomodoro.value);
+  const [second, setSecond] = useState(intialSecond);
   const [started, setStarted] = useState(false);
-  const [timerState, setTimerState] = useState(timerStateTypes.session);
-  const [cycle, setCycle] = useState(1);
-  const [timerLoop, setTimerLoop] = useState(cycle);
-  const handleIncreaseCycle = () => {
-    if (started) return '';
-    setCycle(cycle + 1);
+
+  const handleOption = async (selectedOptionName: string) => {
+    let isSwitched = false;
+    if (started) {
+      setStarted(false);
+      isSwitched = await handleConfirmationPromise(
+        ConfirmationAction.SWITCH,
+        selectedOptionName
+      );
+      if (!isSwitched) {
+        setStarted(true);
+        return;
+      }
+    }
+
+    setMinute(ClockOption[selectedOptionName].value);
+    setSecond(intialSecond);
+    setOption(selectedOptionName);
   };
-  const handleDecreaseCycle = () => {
-    if (started || cycle < 1) return '';
-    setCycle(cycle - 1);
-  };
-  const handleIncreaseBreak = () => {
-    if (started) return '';
-    setBreakLength(breakLength + 1);
-  };
-  const handleDecreaseBreak = () => {
-    if (started || breakLength < 1) return '';
-    setBreakLength(breakLength - 1);
-  };
-  const handleIncreaseSession = () => {
-    if (started) return '';
-    setSessionLength(sessionLength + 1);
-    setMinute(minute + 1);
-  };
-  const handleDecreaseSession = () => {
-    if (started || sessionLength < 1 || minute < 1) return '';
-    setSessionLength(sessionLength - 1);
-    setMinute(minute - 1);
-  };
-  const handleStart = () => {
-    setStarted(!started);
-    setTimerLoop(cycle);
-  };
-  const handleReset = () => {
+
+  const handleReset = async () => {
     setStarted(false);
-    setMinute(initialSessionValue);
-    setSecond(0);
-    setBreakLength(initialBreakValue);
-    setSessionLength(initialSessionValue);
-    setTimerState(timerStateTypes.session);
-    setCycle(1);
+    const response = await handleConfirmationPromise(
+      ConfirmationAction.RESET,
+      option
+    );
+    if (response) {
+      resetTimer();
+    } else {
+      setStarted(true);
+    }
+  };
+
+  const resetTimer = () => {
+    setMinute(ClockOption.Pomodoro.value);
+    setSecond(intialSecond);
+    setStarted(false);
+    setOption(options[0]);
   };
 
   useEffect(() => {
-    // when timer not yet started
+    // when timer is started
     if (!started) return;
-
-    // when timer starts session
-    if (second === 0 && minute > 0 && timerState === timerStateTypes.session) {
-      setSecond(secondMaxValue);
-      if (minute > 0) setMinute(minute - 1);
-    }
-
-    //when session finished and starts break
-    else if (
-      second === 0 &&
-      minute === 0 &&
-      timerState === timerStateTypes.session
-    ) {
-      setMinute(breakLength - 1);
-      setTimerState(timerStateTypes.break);
-      setSecond(secondMaxValue);
-    }
-    //when break finished
-    else if (
-      second === 0 &&
-      minute === 0 &&
-      timerState === timerStateTypes.break
-    ) {
-      setTimerState(timerStateTypes.session);
-      if (timerLoop > 0) {
-        setMinute(sessionLength);
-        setTimerLoop(timerLoop - 1);
-      } else {
-        handleReset();
-      }
-    }
-
-    let myInterval = setInterval(() => {
-      if (second > 0) {
-        setSecond(second - 1);
-      }
-    }, 1000);
+    const intervalId = setInterval(() => {
+      // when timer is stopped counting
+      if (!started) return;
+      setSecond((prevSecond: number) => {
+        if (prevSecond < 1) {
+          setSecond(secondCountFrom);
+          setMinute(prevMinute => {
+            if (prevMinute < 1) {
+              const playAudioPromise = new Promise(resolve => {
+                const sound = new Audio(BeepSound);
+                resolve(sound.play());
+              });
+              playAudioPromise.then(() => {
+                alert('The time is up!');
+                resetTimer();
+              });
+            }
+            return prevMinute - 1;
+          });
+        }
+        return prevSecond - 1;
+      });
+    }, 10);
 
     return () => {
-      clearInterval(myInterval);
+      clearInterval(intervalId);
     };
-  }, [started, second, timerLoop]);
+  }, [started]);
+
   return (
     <MainLayout>
-      <div className={PomodoroStyles['main']}>
-        <Title title={'Pomodoro'} />
-        <ClockController
-          count={cycle}
-          title={'Cycle Length'}
-          handleIncrease={handleIncreaseCycle}
-          handleDecrease={handleDecreaseCycle}
+      <div className={PomodoroStyles['pomodoro']}>
+        <TimerOptions options={options} selectOption={handleOption} />
+        <Title
+          title={minute + ': ' + (second < 10 ? '0' + second : second)}
+          larger={true}
         />
-        <ClockController
-          count={breakLength}
-          title={'Break Length'}
-          handleIncrease={handleIncreaseBreak}
-          handleDecrease={handleDecreaseBreak}
+        <TimerController
+          handleReset={handleReset}
+          handleAction={() => setStarted(!started)}
+          started={started}
         />
-        <ClockController
-          count={sessionLength}
-          title={'Session Length'}
-          handleIncrease={handleIncreaseSession}
-          handleDecrease={handleDecreaseSession}
-        />
-        <Countdown title={timerState} minute={minute} second={second} />
-        <div className={PomodoroStyles['pomodoro-button']}>
-          <a>
-            <CustomButton
-              buttonVariant="success"
-              buttonName="Start"
-              buttonHandler={handleStart}
-            />
-          </a>
-          <a>
-            <CustomButton
-              buttonVariant="danger"
-              buttonName="Reset"
-              buttonHandler={handleReset}
-            />
-          </a>
-        </div>
-        {timerState === timerStateTypes.break ? <PlayAudio /> : null}
+        <Title title={ClockOption[option].desc} />
       </div>
     </MainLayout>
   );

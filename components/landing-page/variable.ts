@@ -7,24 +7,27 @@ export let descriptionArray = [
 
 export const projectsArray = [
   {
+    url: 'https://chatbox-frontend-react-ts.vercel.app/',
+    title: '[In progress] Chat Box',
+    link: 'https://github.com/BoonChi/chatBox-NestJs-Postgres-ReactJs-Typescript',
+    buttonColor: 'danger',
+    desc: 'Nestjs Websocket Postgres, NextJs with typescript',
+    imgSrc: '/chatbox.png'
+  },
+  {
+    url: '/pomodoro',
+    title: 'Pomodoro',
+    link: 'https://github.com/BoonChi/my-portfolio',
+    buttonColor: 'success',
+    desc: 'NextJs with React, UseState, UseEffect, Promise, Sass',
+    imgSrc: './pomodoro.png'
+  },
+  {
     url: '/todo',
     title: 'To do',
     link: 'https://github.com/BoonChi/my-portfolio',
     buttonColor: 'info',
-    desc: 'NextJs with Redux Store',
-  },
-  // {
-  //   url: '/pomodoro',
-  //   title: 'Pomodoro',
-  //   link: 'https://github.com/BoonChi/my-portfolio',
-  //   buttonColor: 'success',
-  //   desc: 'React,UseState,UseEffect',
-  // },
-  {
-    url: 'https://chi-chat-box-demo.herokuapp.com/',
-    title: '[In progress] Chat Box',
-    link: 'https://github.com/BoonChi/chatBox-NestJs-Postgres-ReactJs-Typescript',
-    buttonColor: 'danger',
-    desc: 'Nestjs Websocket Postgres,NextJs with typescript',
-  },
+    desc: 'NextJs with React Redux, UseState, Sass',
+    imgSrc: './todo.png'
+  }
 ];
