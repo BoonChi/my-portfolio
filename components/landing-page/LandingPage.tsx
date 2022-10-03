@@ -7,7 +7,7 @@ import MainContent from './MainContent/MainContent';
 import Scroll from './Scroll/Scroll';
 import { descriptionArray, projectsArray } from './variable';
 
-const LandingPage: React.FC = () => {
+const LandingPage = () => {
   const basePath = useRouter().basePath;
   const convertPath = (path: string) =>
     basePath?.charAt(0) === '/' ? basePath + path : path;
@@ -16,18 +16,18 @@ const LandingPage: React.FC = () => {
     return project;
   });
   return (
-    <MainLayout>
+    <MainLayout withoutFooter={true}>
       <div className={LandingPageStyle['landing-page']}>
-        <div className={LandingPageStyle['text-animation']}>
-          <MainContent />
-          <Description description={descriptionArray} />
-        </div>
         <div className={LandingPageStyle['center']}>
           <img
             src={convertPath('/my-photo.png')}
             className={LandingPageStyle['my-photo']}
             alt="my photo"
           ></img>
+        </div>
+        <div className={LandingPageStyle['text-animation']}>
+          <MainContent />
+          <Description description={descriptionArray} />
         </div>
       </div>
       <Scroll></Scroll>

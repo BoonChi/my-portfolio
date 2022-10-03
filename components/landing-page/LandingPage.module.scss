@@ -11,15 +11,12 @@ $padding-sizes: (
 
 .landing-page {
   @extend .main;
-  display: flex;
-  flex-direction: row;
   @include adjustment(padding,$padding-sizes);
 }
 
 $sizes: (
-  800px:100%,
-  1024px: 80%,
-  1200px: 60%
+  1024px: 15%,
+  1200px: 17%
 );
 
 .center {

@@ -6,12 +6,12 @@ type Props = {
   buttonVariant?: string;
   buttonAnimation?: boolean;
 };
-const CustomButton: React.FC<Props> = ({
+const CustomButton = ({
   buttonName,
   buttonHandler,
   buttonVariant,
   buttonAnimation,
-}) => {
+}: Props) => {
   return (
     <div>
       <Button

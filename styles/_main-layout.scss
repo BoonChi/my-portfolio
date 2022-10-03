@@ -1,5 +1,9 @@
 @import 'styles/variables';
 
-.main-layout {
+.main-layout-without-footer {
   height: calc(100vh - $navbar-height);
+}
+
+.main-layout{
+  height: calc(100vh - $navbar-height - $footer-height);
 }

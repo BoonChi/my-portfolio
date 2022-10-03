@@ -1,4 +1,4 @@
-import React, { FormEvent } from 'react';
+import type { FormEvent } from 'react';
 import Title from 'components/common/title/CustomTitle';
 import TodoHeaderStyle from './TodoHeader.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,12 +11,12 @@ type Props = {
   userInput: string;
   handleChange: (event: FormEvent<HTMLInputElement>) => void;
 };
-const TodoHeader: React.FC<Props> = ({
+const TodoHeader = ({
   todoAppTitle,
   handleAdd,
   userInput,
   handleChange,
-}) => {
+}: Props) => {
   return (
     <div className={TodoHeaderStyle['todo-top']}>
       <Title title={todoAppTitle}></Title>

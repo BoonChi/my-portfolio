@@ -15,7 +15,7 @@ type Props = {
   projects: Array<IPersonalProjectsProps>;
 };
 
-const PersonalProjects: React.FC<Props> = ({ projects }) => {
+const PersonalProjects = ({ projects }: Props) => {
   return (
     <div
       className={personalProjectsStyle['personal-projects']}
