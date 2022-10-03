@@ -27,7 +27,7 @@ const PersonalProjects = ({ projects }: Props) => {
           key={index}
           className={personalProjectsStyle['card-body']}
         >
-          <Card.Img variant="top" src={project.imgSrc} />
+          <Card.Img variant="top" src={project.imgSrc} alt={project.imgSrc} />
           <Card.Body>
             <Card.Text>{project.desc} </Card.Text>
             <div className={personalProjectsStyle['inline-buttons']}>

@@ -19,7 +19,7 @@ const CustomNavbar = ({ navItems }: Props) => {
     <div className={CustomNavbarStyle['custom-navbar']}>
       <nav className="navbar navbar-light">
         {navItems.map((nav, index) => (
-          <Link href={nav.link} passHref key={index}>
+          <Link href={nav.link} passHref key={index} aria-label={nav.link}>
             <a className="navbar-brand" target={nav.noTarget ? '' : '_blank'}>
               <FontAwesomeIcon
                 icon={nav.icon as IconProp}

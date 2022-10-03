@@ -18,7 +18,7 @@ const CustomFooter = ({ footerItems }: Props) => {
     <div className={CustomFooterStyle['custom-footer']}>
       <footer>
         {footerItems.map((item, index) => (
-          <Link href={item.link} passHref key={index}>
+          <Link href={item.link} passHref key={index} aria-label={item.link}>
             <a className="footer-item">
               <FontAwesomeIcon
                 icon={item.icon as IconProp}
