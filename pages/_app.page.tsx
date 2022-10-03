@@ -10,6 +10,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <Provider store={store}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>My portfolio By NextJs</title>
       </Head>
       <Component {...pageProps} />
     </Provider>

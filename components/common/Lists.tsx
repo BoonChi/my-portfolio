@@ -1,15 +1,15 @@
-import React from 'react';
+import type React from 'react';
 interface Props<T> {
   renderItem: (key: T) => string;
   keyExtractor: (key: T) => string;
   data: T[];
 }
 
-const Lists: React.FC<Props<{ [key: string]: any }>> = ({
+const Lists = ({
   renderItem,
   keyExtractor,
   data,
-}) => {
+}: Props<{ [key: string]: any }>) => {
   return (
     <div>
       <ul>

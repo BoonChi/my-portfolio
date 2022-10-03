@@ -1,4 +1,4 @@
-import React, { FormEvent } from 'react';
+import type { FormEvent } from 'react';
 import TodoModal from './todoModal';
 import TodoListItemStyle from './TodoListItem.module.scss';
 import type { IconDefinition } from '@fortawesome/free-solid-svg-icons';
@@ -18,7 +18,7 @@ interface Props<T> {
   editedTodo: TodoState['desc'];
 }
 
-const todoListItem: React.FC<Props<{ [key: string]: any }>> = ({
+const todoListItem = ({
   renderItem,
   keyExtractor,
   data,
@@ -30,7 +30,7 @@ const todoListItem: React.FC<Props<{ [key: string]: any }>> = ({
   handleNewTodoChange,
   updateNewTodo,
   editedTodo,
-}) => {
+}: Props<{ [key: string]: any }>) => {
   return (
     <div className={TodoListItemStyle['todo-bottom']}>
       <ul>

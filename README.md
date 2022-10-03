@@ -1,7 +1,7 @@
 # [My Portfolio](https://my-portfolio-boonchi.vercel.app/) As a software developer
 
-## Purpose
 **my-portfolio** is a page to showcase the skils, experiences, projects as a software developer.
+
 - Brief introduction about my background
 - Showcase three mini-projects such as pomodoro, to-do-list and chatbox
 
@@ -12,6 +12,7 @@
 - [To do list](https://my-portfolio-boonchi.vercel.app/todo) for tracking tasks
 
 ## Dependencies
+
 - @fortawesome
 - @reduxjs/toolkit
 - bootstrap
@@ -29,6 +30,7 @@
 Install the dependencies and devDependencies and start the server.
 
 For **development** environment:
+
 ```sh
 git clone git@github.com:BoonChi/my-portfolio.git
 npm i

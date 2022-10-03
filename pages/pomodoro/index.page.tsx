@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Title from 'components/common/title/CustomTitle';
 import BeepSound from 'public/beep.mp3';
 import PomodoroStyles from './Pomodoro.module.scss';

@@ -1,4 +1,4 @@
-import React, { FormEvent } from 'react';
+import type { FormEvent } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
   editedTodo: TodoState['desc'];
 };
 
-const TodoModal: React.FC<Props> = ({
+const TodoModal = ({
   show,
   handleClose,
   title,
@@ -19,7 +19,7 @@ const TodoModal: React.FC<Props> = ({
   updateNewTodo,
   editedTodo,
   handleNewTodoChange,
-}) => {
+}: Props) => {
   return (
     <div>
       <Modal show={show} onHide={handleClose}>
