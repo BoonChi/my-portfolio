@@ -1,12 +1,13 @@
 # [My Portfolio](https://my-portfolio-boonchi.vercel.app/) As a software developer
 
-**my-portfolio** is a page to showcase the skils, experiences, projects as a software developer.
+**My Portfolio** is a page to showcase the skils, experiences, projects as a software developer.
 
 - Brief introduction about my background
 - Showcase three mini-projects such as pomodoro, to-do-list and chatbox
 
-## Major Functions
+## Major Features
 
+- [About Me](https://my-portfolio-boonchi.vercel.app/aboutMe) my technical skills
 - [Chatbox](https://chatbox-frontend-react-ts.vercel.app/) for user authentication
 - [Pomodoro](https://my-portfolio-boonchi.vercel.app/pomodoro) as a pomodoro countdown timer
 - [To do list](https://my-portfolio-boonchi.vercel.app/todo) for tracking tasks

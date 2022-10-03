@@ -1,9 +1,8 @@
-export const textArray = ['Web Developer'];
-
-export let descriptionArray = [
-  "I'm a web software developer based in Poland with experience",
-  'in developing FRONTend and BACKend of web products',
-  'REACT(NextJs TS) and NODE(ExpressJS & NestJs TS) are the stacks that I am working on currently.',
+export const descriptionArray = [
+  "I'm a web software developer in",
+  'FRONTend & BACKend',
+  '💄 REACT(NextJs TS)',
+  '✨ NODE(ExpressJS & NestJs TS)',
 ];
 
 export const projectsArray = [

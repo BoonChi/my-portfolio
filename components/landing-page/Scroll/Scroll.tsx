@@ -6,7 +6,7 @@ import Link from 'next/link';
 const Scroll = () => {
   return (
     <div className={ScrollStyle['main']}>
-      <Link href="#personal-projects" passHref>
+      <Link href="#personal-projects" passHref aria-label="Arrow">
         <FontAwesomeIcon icon={faArrowDown} />
       </Link>
     </div>

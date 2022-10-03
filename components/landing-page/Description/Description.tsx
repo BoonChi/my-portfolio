@@ -8,7 +8,12 @@ const Description = ({ description }: Props) => {
   return (
     <div className={DescriptionStyle['main']}>
       {description.map((desc, index) => (
-        <p key={index}>{desc}</p>
+        <p
+          key={index}
+          className={index % 2 === 1 ? '' : DescriptionStyle['bold-text']}
+        >
+          {desc}
+        </p>
       ))}
     </div>
   );

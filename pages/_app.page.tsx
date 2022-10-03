@@ -10,6 +10,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     <Provider store={store}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="description"
+          content="I'm a web software developer who is interested in FRONTend & BACKend 💄 REACT(NextJs TS) ✨ NODE(ExpressJS & NestJs TS) Porforlio of a software developer"
+        ></meta>
         <title>My portfolio By NextJs</title>
       </Head>
       <Component {...pageProps} />
