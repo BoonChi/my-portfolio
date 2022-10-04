@@ -1,6 +1,5 @@
 import MainLayout from 'components/layouts/MainLayout';
 import PersonalProjects from 'components/personal-projects/PersonalProjects';
-import Description from './Description/Description';
 import LandingPageStyle from './LandingPage.module.scss';
 import MainContent from './MainContent/MainContent';
 import Scroll from './Scroll/Scroll';
@@ -23,7 +22,7 @@ const LandingPage = ({ profileSrc, description, projects }: IProps) => {
         </div>
         <div className={LandingPageStyle['text-animation']}>
           <MainContent />
-          <Description description={description} />
+          {/* <Description description={description} /> */}
         </div>
       </div>
       <Scroll></Scroll>
